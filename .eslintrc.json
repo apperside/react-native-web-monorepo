@@ -1,0 +1,87 @@
+{
+  "env": {
+    "browser": true,
+    "es6": true
+  },
+  "extends": [
+    "plugin:react/recommended",
+    "standard"
+  ],
+  "globals": {
+    "Atomics": "readonly",
+    "SharedArrayBuffer": "readonly"
+  },
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 2018,
+    "sourceType": "module"
+  },
+  "plugins": [
+    "react",
+    "@typescript-eslint"
+  ],
+  "rules": {
+    "max-len": [
+      2,
+      {
+        "code": 120,
+        "comments": 1000000,
+        "ignoreStrings": true,
+        "ignoreRegExpLiterals": true
+      }
+    ],
+    "no-useless-escape": 0,
+    "react/jsx-key": 2,
+    "react/jsx-max-props-per-line": [
+      1,
+      {
+        "maximum": 1,
+        "when": "always"
+      }
+    ],
+    "linebreak-style": [
+      "error",
+      "unix"
+    ],
+    "quotes": [
+      "error",
+      "double"
+    ],
+    "semi": [
+      "error",
+      "always"
+    ],
+    "no-unused-vars": [
+      "off"
+    ],
+    "no-constant-condition": [
+      "off"
+    ],
+    "no-undef": [
+      "off"
+    ],
+    "no-console": [
+      "off"
+    ],
+    "react/no-deprecated": [
+      "off"
+    ],
+    "react/prop-types": [
+      "off"
+    ],
+    "react/display-name": [
+      "off"
+    ],
+    "indent": [
+      1,
+      2,
+      {
+        "SwitchCase": 1
+      }
+    ],
+    "space-before-function-paren": "off"
+  }
+}

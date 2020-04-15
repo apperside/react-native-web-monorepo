@@ -1,0 +1,16 @@
+{
+  "name": "components",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "clean": "rm -rf node_modules"
+  },
+  "dependencies": {
+    "react": "16.12.0",
+    "react-native": "0.61.5"
+  },
+  "devDependencies": {
+    "@types/react": "16.9.19",
+    "@types/react-native": "0.61.12"
+  }
+}

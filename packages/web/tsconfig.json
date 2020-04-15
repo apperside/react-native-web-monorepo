@@ -1,0 +1,27 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "typeRoots": [
+      "@types",
+      "typings",
+      "../../typings",
+      "../../node_modules/@types"
+    ]
+  },
+  "include": [
+    "src",
+    "next-env.d.ts",
+    "typings",
+    "../../typings",
+    "**/*.ts",
+    "**/*.tsx",
+    "**/*.png"
+  ],
+  "references": [
+    {
+      "path": "../components"
+    }
+  ]
+}
