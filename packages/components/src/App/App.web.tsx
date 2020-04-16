@@ -1,11 +1,11 @@
 import React from "react";
 import { StyleSheet } from "react-native";
-import { defaultTheme } from "../theme";
 import { ThemeProvider } from "../theme/ThemeProvider";
+import { DefaultTheme } from "styled-components";
 
-export const App: React.FC = (props) => {
+export const App: React.FC<{ theme: DefaultTheme }> = (props) => {
   return (
-    <ThemeProvider theme={defaultTheme}>
+    <ThemeProvider theme={props.theme}>
       {props.children}
     </ThemeProvider>
   );

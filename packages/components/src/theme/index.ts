@@ -1,16 +1,6 @@
-// @ts-nocheck
 import * as CSS from "csstype";
 import { DefaultTheme } from "styled-components";
-
 import { ObjectOrArray, Theme, ThemeBorders, ThemeBorderStyles, ThemeBreakpoints, ThemeColors, ThemeFontFamilies, ThemeFontSizes, ThemeSizes, ThemeSpaces } from "styled-system";
-import { borders, borderWidths } from "./styleguide/borders";
-import breakpoints from "./styleguide/breakpoints";
-import { themeColors } from "./styleguide/colors";
-import { sizes } from "./styleguide/sizes";
-import { space } from "./styleguide/spaces";
-import { fonts, fontSizes } from "./styleguide/typography/typography";
-import { typografyVariants, TypographyProps, TypographyVariants } from "./styleguide/typography/TypographyComponent";
-import { ButtonProps } from "../Button";
 
 export type VariantsProps<Props, Variants extends string> =
   { [key in Variants]: Props & { [key in CSS.Pseudos]?: Props } }
@@ -24,16 +14,17 @@ export type VariantsProps<Props, Variants extends string> =
 export type ThemedComponentWithVariants<Props, Variants extends string> =
   Props & { variants: VariantsProps<Props, Variants> }
 
-export interface CustomComponentsTheme {
-  typography?: ThemedComponentWithVariants<TypographyProps, TypographyVariants>
-  button?: ButtonProps
-}
-
 /**
  * define the custom theme's shape
  */
 declare module "styled-components" {
-  export interface DefaultTheme extends Theme, CustomComponentsTheme {
+
+  export interface CustomComponentsTheme {
+    // typography?: { [key in TypographyVariants]: TypographyProps }
+    // button?: ButtonProps
+  }
+
+  export interface DefaultTheme extends Theme {
     // override to remove optionality
     breakpoints: ObjectOrArray<number | string | symbol, keyof ThemeBreakpoints>;
     mediaQueries?: { [size: string]: string };
@@ -59,37 +50,17 @@ declare module "styled-components" {
 
 export type PropsWithVariant<T> = { variant?: T }
 
-const defaultTheme: DefaultTheme = {
-  space,
-  breakpoints,
-  fontSizes,
-  fonts,
-  sizes,
-  borderWidths,
-  borders,
-  colors: themeColors,
-  disableStyledSystemCache: true,
-  typography: {
-    variants: typografyVariants
-  },
-  button: {
-    color: "success",
-    backgroundColor: "ctaButton1",
-    paddingX: 25,
-    paddingY: 20,
-    minWidth: 100,
-    alignSelf: "baseline",
-    borderRadius: 12
-  }
+// const defaultTheme: DefaultTheme = {
+//   space,
+//   breakpoints,
+//   fontSizes,
+//   fonts,
+//   sizes,
+//   borderWidths,
+//   borders,
+//   colors: themeColors,
+//   disableStyledSystemCache: true
 
-};
-// @ts-ignore
-export const defaultThemeNative: DefaultTheme = {
-  color: {
-    white: "#FFFFFF",
-    black: "#000000"
-  }
+// };
 
-};
-
-export { defaultTheme };
+// export { defaultTheme };

@@ -1,9 +1,9 @@
-import { ObjectOrArray, ThemeBorders, ThemeBreakpoints, ThemeColors, ThemeFontFamilies, ThemeFontSizes, ThemeSizes, ThemeSpaces, ThemeBorderWidths } from "styled-system";
+import React from "react";
 import { DefaultTheme } from "styled-components";
+import { ObjectOrArray, ThemeBorders, ThemeBorderWidths, ThemeBreakpoints, ThemeColors, ThemeFontFamilies, ThemeFontSizes, ThemeSizes, ThemeSpaces } from "styled-system";
 import { buildBreakpoints } from "../styleguide/breakpoints";
 import { SCThemeProvider } from "./ThemeProvider";
-import React from "react";
-import { typografyVariants } from "../styleguide/typography/TypographyComponent";
+// import { typografyVariants } from "../styleguide/typography/TypographyComponent";
 export type ThemeSpecs = {
   borderWidths?: ThemeBorderWidths,
   borders?: ThemeBorders
@@ -13,6 +13,7 @@ export type ThemeSpecs = {
   spaces?: ThemeSpaces
   fontFamilies?: ThemeFontFamilies
   fontSizes?: ThemeFontSizes
+  // typograpfyVariants?: { [key in keyof TypographyVariants]: TypographyProps }
 }
 
 export type ThemeProviderProps = {
@@ -43,19 +44,18 @@ export const buildTheme = (specs: ThemeSpecs): DefaultTheme => {
     borderWidths: buildObjectOrArray(specs.borderWidths),
     borders: buildObjectOrArray(specs.borders),
     colors: specs.colors || {},
-    disableStyledSystemCache: true,
-    typography: {
-      variants: typografyVariants
-    },
-    button: {
-      color: "success",
-      backgroundColor: "ctaButton1",
-      paddingX: 25,
-      paddingY: 20,
-      minWidth: 100,
-      alignSelf: "baseline",
-      borderRadius: 12
-    }
+    // typography: specs.typograpfyVariants,
+    disableStyledSystemCache: true
+
+    // button: {
+    //   color: "success",
+    //   backgroundColor: "ctaButton1",
+    //   paddingX: 25,
+    //   paddingY: 20,
+    //   minWidth: 100,
+    //   alignSelf: "baseline",
+    //   borderRadius: 12
+    // }
 
   };
   return defaultTheme;

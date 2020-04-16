@@ -2,20 +2,10 @@ import React from "react";
 import { TouchableOpacity } from "react-native";
 import styled from "styled-components/native";
 import { border, BorderProps, color, ColorProps, FlexboxProps, layout, LayoutProps, size, SizeProps, space, SpaceProps, flexbox } from "styled-system";
-import { defaultTheme } from "./theme";
-import { Text, TypographyProps, TypographyVariants } from "./theme/styleguide/typography/TypographyComponent";
-
-export type ButtonProps =
-  & SpaceProps
-  & SizeProps
-  & ColorProps
-  & BorderProps
-  & FlexboxProps
-  & {
-    textStyle?: TypographyProps,
-    textVariant?: TypographyVariants
-  }
-  & LayoutProps;
+import { TypographyComponentProps, TypographyVariants, Text } from "../typography";
+import { ThemedComponentWithVariants } from "components/src/theme";
+import { appTheme } from "../..";
+import { ButtonProps } from ".";
 
 // eslint-disable-next-line max-len
 // const variants = (theme: DefaultTheme): { variants: TypographyVariantsConfig } => ({ variants: theme.typography.variants });
@@ -33,7 +23,7 @@ export const ButtonSpecs = styled(TouchableOpacity)<ButtonProps>(
 //   // avoid forwarding styled-system's props to dom
 //   shouldForwardProp: (prop) => (prop as any) === "children"
 // })({});
-ButtonSpecs.defaultProps = { ...defaultTheme.button };
+ButtonSpecs.defaultProps = { ...appTheme.button };
 
 export const Button: React.FC<React.ComponentProps<typeof ButtonSpecs>> = ({ color, textStyle, ...props }) => {
   return <ButtonSpecs {...props}

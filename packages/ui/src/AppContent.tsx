@@ -1,6 +1,6 @@
 import React from "react";
-import { Grid, Row, Col } from "./layout";
-import { Text } from "./theme/styleguide/typography";
+import { Grid, Row, Col } from "components/src/layout";
+import { Text } from "./components/typography";
 export const AppContent: React.FC = () => {
   return <Grid flex={1}
     width={1}>

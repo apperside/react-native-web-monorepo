@@ -1,8 +1,7 @@
 import React from "react";
 import { SafeAreaView, StyleSheet } from "react-native";
-import { defaultTheme } from "../theme";
-import { ThemeProvider } from "../theme/ThemeProvider";
 import { DefaultTheme } from "styled-components";
+import { ThemeProvider } from "../theme/ThemeProvider";
 
 export const App: React.FC<{ theme: DefaultTheme }> = props => {
   return (

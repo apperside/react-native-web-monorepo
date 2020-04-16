@@ -1,11 +1,9 @@
 import { App as AppContainer } from "ui/src"
 import { Col, Grid, Row } from "components/src/layout"
-import { defaultTheme } from "components/src/theme"
 import React from "react"
 
 
 const App: React.FC<{}> = props => {
-  console.log(defaultTheme)
   return <AppContainer>
     <Grid flex={1} width={1}>
       <Row borderColor="green">

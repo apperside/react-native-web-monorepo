@@ -19,7 +19,7 @@
     "**/*.tsx",
     "**/*.png"
   ],
-  " ": [
+  "references": [
     {
       "path": "../components"
     },
