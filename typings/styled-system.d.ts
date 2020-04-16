@@ -1109,31 +1109,31 @@ declare module "styled-system" {
      *
      * [MDN reference](https://developer.mozilla.org/en-US/docs/Web/CSS/border-color)
      */
-    borderColor?: ResponsiveValue<TVal, ThemeType>;
+    borderColor?: ColorKeys;
     /**
      * The border-top-color CSS property sets the color of an element's top border. It can also be set with the shorthand CSS properties border-color or border-top.
      *
      * [MDN reference](https://developer.mozilla.org/en-US/docs/Web/CSS/border-top-color)
      */
-    borderTopColor?: ResponsiveValue<TVal, ThemeType>;
+    borderTopColor?: ColorKeys;
     /**
      * The border-bottom-color CSS property sets the color of an element's bottom border. It can also be set with the shorthand CSS properties border-color or border-bottom.
      *
      * [MDN reference](https://developer.mozilla.org/en-US/docs/Web/CSS/border-bottom-color)
      */
-    borderBottomColor?: ResponsiveValue<TVal, ThemeType>;
+    borderBottomColor?: ColorKeys;
     /**
      * The border-left-color CSS property sets the color of an element's left border. It can also be set with the shorthand CSS properties border-color or border-left.
      *
      * [MDN reference](https://developer.mozilla.org/en-US/docs/Web/CSS/border-left-color)
      */
-    borderLeftColor?: ResponsiveValue<TVal, ThemeType>;
+    borderLeftColor?: ColorKeys;
     /**
      * The border-right-color CSS property sets the color of an element's right border. It can also be set with the shorthand CSS properties border-color or border-right.
      *
      * [MDN reference](https://developer.mozilla.org/en-US/docs/Web/CSS/border-right-color)
      */
-    borderRightColor?: ResponsiveValue<TVal, ThemeType>;
+    borderRightColor?: ColorKeys;
   }
 
   export const borderColor: styleFn;

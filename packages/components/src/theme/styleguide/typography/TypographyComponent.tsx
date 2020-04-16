@@ -167,7 +167,7 @@ export const typografyVariants: TypographyVariantsConfig = {
 };
 
 // eslint-disable-next-line max-len
-const variants = (theme: DefaultTheme): { variants: TypographyVariantsConfig } => ({ variants: theme.typography.variants });
+// const variants = (theme: DefaultTheme): { variants: TypographyVariantsConfig } => ({ variants: theme.typography.variants });
 export const TextSpecs = styled.Text<TypographyProps>(
   space,
   fontSize,
@@ -200,7 +200,7 @@ export const Text = styled(TextSpecs).withConfig<TypographyProps>({
 }).attrs<TypographyProps>(({ theme, variant, bold, as, ...other }) => {
   console.log("variant is", theme);
   return ({
-    ...theme.typography.variants[variant || "H1"],
+    ...theme.typography?.variants[variant || "H1"],
     ...other,
     style: { fontWeight: bold ? "bold" : undefined }
   });

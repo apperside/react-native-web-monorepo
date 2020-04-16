@@ -8,8 +8,8 @@ const App: React.FC<{}> = props => {
   console.log(defaultTheme)
   return <AppContainer>
     <Grid flex={1} width={1}>
-      <Row border="12px solid green">
-        <Col border="1px solid red" width={{ default: 1, tablet: 1 / 2 }}>
+      <Row borderColor="green">
+        <Col borderColor="ctaButton1" borderWidth={1} width={{ default: 1, tablet: 1 / 2 }}>
 
         </Col>
         <Col border="1px solid red" width={{ default: 1, tablet: 1 / 2 }}>

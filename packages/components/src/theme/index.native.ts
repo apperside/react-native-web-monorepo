@@ -25,8 +25,8 @@ export type ThemedComponentWithVariants<Props, Variants extends string> =
   Props & { variants: VariantsProps<Props, Variants> }
 
 export interface CustomComponentsTheme {
-  typography: ThemedComponentWithVariants<TypographyProps, TypographyVariants>
-  button: ButtonProps
+  typography?: ThemedComponentWithVariants<TypographyProps, TypographyVariants>
+  button?: ButtonProps
 }
 
 /**

@@ -1,5 +1,6 @@
 import { ObjectOrArray, ThemeFontFamilies, ThemeFontSizes } from "styled-system";
 import * as CSS from "csstype";
+import { buildObjectOrArray } from "../../ThemeProvider";
 export { Text } from "./TypographyComponent";
 
 declare module "styled-system" {
@@ -24,13 +25,22 @@ export const fontFamilies: ThemeFontFamilies = {
   body: "GTAmerica-Regular, Helvetica, Arial, sans-serif",
   bold: "GTAmerica-Bold, Helvetica, Arial, sans-serif"
 };
-export const fonts: ObjectOrArray<CSS.FontFamilyProperty, keyof ThemeFontFamilies> = [];
 
-Object.keys(fontFamilies).forEach((fontFamilyKey) => {
-  // fonts.push(fontFamilies[fontFamilyKey]);
-  // aliases
-  fonts[fontFamilyKey] = fontFamilies[fontFamilyKey];
-});
+// eslint-disable-next-line max-len
+
+export const buildFontFamilies = (fontFamilies: ThemeFontFamilies, useArrayProps: boolean = false) => {
+  return buildObjectOrArray<CSS.FontFamilyProperty, ThemeFontFamilies>(fontFamilies, useArrayProps);
+  // const fonts: ObjectOrArray<CSS.FontFamilyProperty, keyof ThemeFontFamilies> = [];
+  // Object.keys(fontFamilies).forEach((fontFamilyKey) => {
+  //   if (useArrayProps) {
+  //     fonts.push(fontFamilies[fontFamilyKey]);
+  //   }
+  //   // aliases
+  //   fonts[fontFamilyKey] = fontFamilies[fontFamilyKey];
+  // });
+  // return fonts;
+};
+export const fonts: ObjectOrArray<CSS.FontFamilyProperty, keyof ThemeFontFamilies> = buildFontFamilies(fontFamilies);
 
 const fontSizeMap: ThemeFontSizes = {
   small: "0.8rem",

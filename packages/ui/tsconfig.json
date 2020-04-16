@@ -10,14 +10,14 @@
     "suppressImplicitAnyIndexErrors": true,
     "typeRoots": [
       "@types",
-      "typings",
+      "../components/typings",
       "../../typings",
       "../../node_modules/@types"
     ]
   },
   "include": [
     "src",
-    "typings",
     "../../typings",
+    "../components/typings",
   ],
 }

@@ -1,5 +1,6 @@
 
 import { BreakpointNames, ThemeBreakpoints, ObjectOrArray } from "styled-system";
+import { buildObjectOrArray } from "../../ThemeProvider";
 
 declare module "styled-system" {
 
@@ -39,25 +40,22 @@ export const breakpointsMap: ThemeBreakpoints = {
  * https://styled-system.com/responsive-styles/#using-objects
  *
  */
-// export type BreakpointsThemeType = string[] & { [key in keyof ThemeBreakpoints]?: string }
 
-const breakpoints: ObjectOrArray<number | string | symbol, keyof ThemeBreakpoints> = [];
+export const buildBreakpoints = (breakpoints?: ThemeBreakpoints, useArrayProps: boolean = false) => {
+  if (!breakpoints) return [];
+  buildMediaQueries(breakpoints);
+  return buildObjectOrArray<number | string | symbol, ThemeBreakpoints>(breakpoints, useArrayProps);
+};
 
 // @ts-ignore
 const mediaqueries: { [key in keyof ThemeBreakpoints]: string } = {};
-/**
- * generate breakpoints in mobile first approach
- */
-for (const breakpointKey in breakpointsMap) {
-
-}
-Object.keys(breakpointsMap).forEach((breakpointKey) => {
-  // breakpoints.push(breakpointsMap[breakpointKey]);
-  // breakpoint aliases
-  breakpoints[breakpointKey] = breakpointsMap[breakpointKey];
-  // media query aliases
-  mediaqueries[breakpointKey] = `@media screen and (min-width:${breakpointsMap[breakpointKey]})`;
-});
+const buildMediaQueries = (breakpointsMap: ThemeBreakpoints) => {
+  Object.keys(breakpointsMap).forEach((breakpointKey) => {
+    mediaqueries[breakpointKey] = `@media screen and (min-width:${breakpointsMap[breakpointKey]})`;
+  });
+};
+const breakpoints: ObjectOrArray<number | string | symbol, keyof ThemeBreakpoints> =
+  buildBreakpoints(breakpointsMap, false);
 
 type MediaQueries = {
   down: (breakpoint: BreakpointNames) => string

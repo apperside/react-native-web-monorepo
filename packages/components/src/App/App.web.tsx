@@ -1,19 +1,7 @@
 import React from "react";
-import {
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
-  StyleSheet,
-  View,
-  Platform
-} from "react-native";
-import { Text } from "components/src/theme/styleguide/typography/TypographyComponent";
-import { AppHeader } from "../AppHeader";
-import { ThemeProvider } from "styled-components";
+import { StyleSheet } from "react-native";
 import { defaultTheme } from "../theme";
-import { Button } from "../Button";
-import { Grid, Row, Col } from "../layout";
-import { AppContent } from "../AppContent";
+import { ThemeProvider } from "../theme/ThemeProvider";
 
 export const App: React.FC = (props) => {
   return (

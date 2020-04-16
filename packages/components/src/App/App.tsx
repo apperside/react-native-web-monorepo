@@ -1,8 +1,9 @@
 import React from "react";
 import { SafeAreaView, StyleSheet } from "react-native";
-import styled, { ThemeProvider } from "styled-components/native";
+import styled from "styled-components/native";
 import { AppContent } from "../AppContent";
 import { defaultTheme } from "../theme";
+import { ThemeProvider } from "../theme/ThemeProvider";
 
 const Container = styled.View`
   flex: 1;

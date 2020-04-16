@@ -1,5 +1,6 @@
 import * as CSS from "csstype";
 import { ObjectOrArray, ThemeSizes } from "styled-system";
+import { buildObjectOrArray } from "../../ThemeProvider";
 
 /**
  * Values used for
@@ -19,7 +20,8 @@ export const sizesMap: ThemeSizes = {
   HEADER_MOBILE: 70
 };
 
-export const sizes: ObjectOrArray<CSS.MarginProperty<number | string>, keyof ThemeSizes> = [];
+export const sizes: ObjectOrArray<CSS.MarginProperty<number | string>, keyof ThemeSizes> =
+  buildObjectOrArray<CSS.MarginProperty<number | string>, ThemeSizes>(sizesMap);
 
 Object.keys(sizesMap).forEach((breakpointKey) => {
   // sizes.push(sizesMap[breakpointKey]);

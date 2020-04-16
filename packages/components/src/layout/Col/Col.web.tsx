@@ -12,6 +12,7 @@ export const Col = styled.div.withConfig<ColProps>({ shouldForwardProp })<ColPro
   layout,
   color,
   {
-    boxSizing: "border-box"
+    boxSizing: "border-box",
+    borderStyle: "solid"
   }
 );
