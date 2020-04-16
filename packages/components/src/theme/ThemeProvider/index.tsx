@@ -63,6 +63,7 @@ export const buildTheme = (specs: ThemeSpecs): DefaultTheme => {
 
 export const ThemeProvider: React.FC<ThemeProviderProps> = ({ theme, themeSpecs, children }) => {
   let finalTheme = theme;
+
   if (!finalTheme && themeSpecs) {
     finalTheme = buildTheme(themeSpecs);
   }

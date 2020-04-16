@@ -1,6 +1,5 @@
 
 import { BreakpointNames, ThemeBreakpoints, ObjectOrArray } from "styled-system";
-import { buildObjectOrArray } from "../../ThemeProvider";
 
 declare module "styled-system" {
 
@@ -17,6 +16,19 @@ declare module "styled-system" {
     desktopLarge: number | string
   }
 }
+
+export const buildObjectOrArray = <P1, P2>(valuesMap: P2, useArrayProps: boolean = false) => {
+  // @ts-ignore
+  const result: ObjectOrArray<P1, keyof P2> = [];
+  Object.keys(valuesMap).forEach((valueKey) => {
+    if (useArrayProps) {
+      result.push(valuesMap[valueKey]);
+    }
+    // aliases
+    result[valueKey] = valuesMap[valueKey];
+  });
+  return result;
+};
 
 /**
  * The logic is mobile first, so the first breakpoint is alway from 0 to the first declared one
@@ -44,6 +56,7 @@ export const breakpointsMap: ThemeBreakpoints = {
 export const buildBreakpoints = (breakpoints?: ThemeBreakpoints, useArrayProps: boolean = false) => {
   if (!breakpoints) return [];
   buildMediaQueries(breakpoints);
+  // alert(buildObjectOrArray);
   return buildObjectOrArray<number | string | symbol, ThemeBreakpoints>(breakpoints, useArrayProps);
 };
 

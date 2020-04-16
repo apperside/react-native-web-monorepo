@@ -1,26 +1,12 @@
 import React from "react";
 import { SafeAreaView, StyleSheet } from "react-native";
-import styled from "styled-components/native";
-import { AppContent } from "../AppContent";
 import { defaultTheme } from "../theme";
 import { ThemeProvider } from "../theme/ThemeProvider";
+import { DefaultTheme } from "styled-components";
 
-const Container = styled.View`
-  flex: 1;
-  justify-content: center;
-  align-items: center;
-  background-color: red;
-`;
-const MainText = styled.Text`
-  font-size: 20;
-  text-align: center;
-  margin: 10px;
-  color: red;
-`;
-
-export const App: React.FC = props => {
+export const App: React.FC<{ theme: DefaultTheme }> = props => {
   return (
-    <ThemeProvider theme={defaultTheme}>
+    <ThemeProvider theme={props.theme}>
       <SafeAreaView style={{ flex: 1 }}>
         {props.children}
       </SafeAreaView>

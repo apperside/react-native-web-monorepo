@@ -19,9 +19,12 @@
     "**/*.tsx",
     "**/*.png"
   ],
-  "references": [
+  " ": [
     {
       "path": "../components"
+    },
+    {
+      "path": "../ui"
     }
   ]
 }

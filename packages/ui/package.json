@@ -1,8 +1,7 @@
 {
-  "name": "@apperside/ui",
-  "version": "1.0.0",
+  "name": "ui",
+  "version": "0.0.1",
   "dependencies": {
-    "cross-env": "7.0.2",
     "workspace-a": "1.0.0"
   }
 }

@@ -1,4 +1,4 @@
-import { App as AppContainer } from "components/src/App"
+import { App as AppContainer } from "ui/src"
 import { Col, Grid, Row } from "components/src/layout"
 import { defaultTheme } from "components/src/theme"
 import React from "react"
