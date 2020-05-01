@@ -6,12 +6,12 @@
  */
 const path = require("path");
 const getWorkspaces = require("get-yarn-workspaces");
-const blacklist = require('metro-config/src/defaults/blacklist');
+const blacklist = require("metro-config/src/defaults/blacklist");
 const workspaces = getWorkspaces(__dirname);
 
 const watchFolders = [
-  path.resolve(__dirname, '../..', 'node_modules'),
-  ...workspaces.filter((workspaceDir) => !(workspaceDir === __dirname)),
+  path.resolve(__dirname, "../..", "node_modules"),
+  ...workspaces.filter((workspaceDir) => !(workspaceDir === __dirname))
 ];
 
 module.exports = {
@@ -30,7 +30,7 @@ module.exports = {
     ]),
     extraNodeModules: {
       // Resolve all react-native module imports to the locally-installed version
-      'react-native': path.resolve(__dirname, 'node_modules', 'react-native'),
+      "react-native": path.resolve(__dirname, "node_modules", "react-native")
 
       // Resolve additional nohoist modules depended on by other packages
       // 'react-native-svg': path.resolve(
@@ -41,14 +41,14 @@ module.exports = {
 
       // // Resolve core-js imports to the locally installed version
       // 'core-js': path.resolve(appDir, 'node_modules', 'core-js'),
-    },
+    }
   },
   transformer: {
     getTransformOptions: async () => ({
       transform: {
         experimentalImportSupport: false,
-        inlineRequires: false,
-      },
-    }),
-  },
+        inlineRequires: false
+      }
+    })
+  }
 };
