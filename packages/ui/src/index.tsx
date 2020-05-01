@@ -16,8 +16,9 @@ export type PropsWithVariant<T> = { variant?: T }
 declare module "styled-components" {
   export interface DefaultTheme extends Theme {
     // override to remove optionality
-    typography?: ThemedComponentWithVariants<MYTypographyProps, TypographyVariants>
-    button?: ButtonProps
+    typography: ThemedComponentWithVariants<MYTypographyProps, TypographyVariants>
+    textInput: ThemedComponentWithVariants<MYTypographyProps, TypographyVariants>
+    button: ButtonProps
 
   }
 }

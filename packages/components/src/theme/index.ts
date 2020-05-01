@@ -24,7 +24,7 @@ declare module "styled-components" {
     // button?: ButtonProps
   }
 
-  export interface DefaultTheme extends Theme {
+  export interface DefaultTheme extends Theme, CustomComponentsTheme {
     // override to remove optionality
     breakpoints: ObjectOrArray<number | string | symbol, keyof ThemeBreakpoints>;
     mediaQueries?: { [size: string]: string };

@@ -44,19 +44,7 @@ export const buildTheme = (specs: ThemeSpecs): DefaultTheme => {
     borderWidths: buildObjectOrArray(specs.borderWidths),
     borders: buildObjectOrArray(specs.borders),
     colors: specs.colors || {},
-    // typography: specs.typograpfyVariants,
     disableStyledSystemCache: true
-
-    // button: {
-    //   color: "success",
-    //   backgroundColor: "ctaButton1",
-    //   paddingX: 25,
-    //   paddingY: 20,
-    //   minWidth: 100,
-    //   alignSelf: "baseline",
-    //   borderRadius: 12
-    // }
-
   };
   return defaultTheme;
 };

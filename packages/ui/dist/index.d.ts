@@ -9,8 +9,9 @@ export declare type PropsWithVariant<T> = {
 };
 declare module "styled-components" {
     interface DefaultTheme extends Theme {
-        typography?: ThemedComponentWithVariants<MYTypographyProps, TypographyVariants>;
-        button?: ButtonProps;
+        typography: ThemedComponentWithVariants<MYTypographyProps, TypographyVariants>;
+        textInput: ThemedComponentWithVariants<MYTypographyProps, TypographyVariants>;
+        button: ButtonProps;
     }
 }
 export declare const appTheme: DefaultTheme;
