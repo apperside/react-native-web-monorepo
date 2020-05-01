@@ -1,10 +1,11 @@
+import { Col, Grid, Row } from "@apperside/ui-engine/src/layout";
 import { ThemedComponentWithVariants } from "@apperside/ui-engine/src/theme";
 import React from "react";
 import { DefaultTheme } from "styled-components";
 import { Theme } from "styled-system";
 import { ButtonProps } from "./components/button";
 import { Text, TypographyComponentProps as MYTypographyProps, TypographyVariants } from "./components/typography";
-export { Text };
+export { Text, Col, Grid, Row };
 declare module "styled-components" {
     interface DefaultTheme extends Theme {
         typography: ThemedComponentWithVariants<MYTypographyProps, TypographyVariants>;

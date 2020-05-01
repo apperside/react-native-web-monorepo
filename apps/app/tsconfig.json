@@ -11,7 +11,8 @@
   "include": [
     "index.js",
     "src",
-    "../../typings"
+    "../../typings",
+    "../../node_modules"
   ],
   "references": [
     {

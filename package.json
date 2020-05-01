@@ -21,7 +21,7 @@
     "@styled-system/should-forward-prop": "^5.1.5",
     "@types/styled-components": "^5.1.0",
     "@types/styled-system__should-forward-prop": "^5.1.1",
-    "react-native": "0.61.5",
+    "react-native": "0.62.2",
     "styled-components": "^5.1.0",
     "styled-system": "^5.1.5"
   },
