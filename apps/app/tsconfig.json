@@ -1,0 +1,21 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "noEmit": true,
+    "skipLibCheck": true,
+    "typeRoots": [
+      "@types",
+      "../../typings"
+    ]
+  },
+  "include": [
+    "index.js",
+    "src",
+    "../../typings"
+  ],
+  "references": [
+    {
+      "path": "../components"
+    }
+  ]
+}

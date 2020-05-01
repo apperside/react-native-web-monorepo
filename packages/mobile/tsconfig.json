@@ -2,21 +2,20 @@
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
     "noEmit": true,
+    "skipLibCheck": true,
     "typeRoots": [
       "@types",
-      "../../typings",
-      "../../node_modules/@types"
+      "../../typings"
     ]
   },
   "include": [
     "index.js",
     "src",
-    "../../typings",
-    "../../node_modules"
+    "../../typings"
   ],
   "references": [
     {
-      "path": "../components"
+      "path": "../app-ui"
     }
   ]
 }

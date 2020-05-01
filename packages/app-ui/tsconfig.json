@@ -1,0 +1,28 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "composite": true,
+    "declaration": true,
+    "emitDeclarationOnly": true,
+    "isolatedModules": false,
+    "outDir": "dist",
+    "rootDir": "src",
+    "skipLibCheck": true,
+    "suppressImplicitAnyIndexErrors": true,
+    "typeRoots": [
+      "@types",
+      "../components/typings",
+      "../../typings",
+    ]
+  },
+  "include": [
+    "src",
+    "../../typings",
+    "../ui-engine/typings",
+  ],
+  "references": [
+    {
+      "path": "../ui-engine"
+    }
+  ]
+}

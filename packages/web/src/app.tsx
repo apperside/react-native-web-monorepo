@@ -1,5 +1,5 @@
-import { App as AppContainer } from "ui/src"
-import { Col, Grid, Row } from "components/src/layout"
+import { App as AppContainer } from "@apperside/app-ui/src"
+import { Col, Grid, Row } from "@apperside/ui-engine/src/layout"
 import React from "react"
 
 

@@ -1,5 +1,5 @@
 import styled from "styled-components/native";
-import { mediaQuery } from "components/src/theme/styleguide/breakpoints";
+import { mediaQuery } from "@apperside/ui-engine/src/theme/styleguide/breakpoints";
 import { BreakpointNames } from "styled-system";
 
 export type HidableProps = {

@@ -1,9 +1,9 @@
-import { Col, Grid, Row } from "components/src/layout";
+import { Col, Grid, Row } from "@apperside/ui-engine/src/layout";
 import React from "react";
 import { SafeAreaView } from "react-native";
 import styled, { ThemeProvider } from "styled-components/native";
-import { App as AppContainer } from "ui/src";
-import { Text } from "ui/src/components/typography";
+import { App as AppContainer, Text } from "@apperside/app-ui/src";
+
 const Container = styled.View(props => ({
   backgroundColor: props.theme.colors.primary,
   flex: 1

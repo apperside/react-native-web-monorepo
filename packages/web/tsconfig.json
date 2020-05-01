@@ -6,8 +6,7 @@
     "typeRoots": [
       "@types",
       "typings",
-      "../../typings",
-      "../../node_modules/@types"
+      "../../typings"
     ]
   },
   "include": [
@@ -21,10 +20,7 @@
   ],
   "references": [
     {
-      "path": "../components"
-    },
-    {
-      "path": "../ui"
+      "path": "../app-ui"
     }
   ]
 }
