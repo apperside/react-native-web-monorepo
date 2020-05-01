@@ -16,11 +16,12 @@
     "../../typings",
     "**/*.ts",
     "**/*.tsx",
-    "**/*.png"
+    "**/*.png",
+    "../../packages/app-ui"
   ],
   "references": [
     {
-      "path": "../app-ui"
+      "path": "../../packages/app-ui"
     }
   ]
 }

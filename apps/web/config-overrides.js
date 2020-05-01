@@ -8,8 +8,8 @@ const resolveApp = relativePath => path.resolve(appDirectory, relativePath)
 // our packages that will now be included in the CRA build step
 const appIncludes = [
   resolveApp('src'),
-  resolveApp('../ui-engine/src'),
-  resolveApp('../app-ui/src'),
+  resolveApp('../../packages/ui-engine/src'),
+  resolveApp('../../packages/app-ui/src'),
 ]
 
 module.exports = function override(config, env) {
