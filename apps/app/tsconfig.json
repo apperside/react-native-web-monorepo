@@ -15,7 +15,7 @@
   ],
   "references": [
     {
-      "path": "../components"
+      "path": "../../packages/app-ui"
     }
   ]
 }

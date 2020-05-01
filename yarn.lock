@@ -2753,11 +2753,6 @@ anymatch@^3.0.3, anymatch@~3.1.1:
     normalize-path "^3.0.0"
     picomatch "^2.0.4"
 
-app-ui@^0.0.1:
-  version "0.0.1"
-  resolved "https://registry.yarnpkg.com/app-ui/-/app-ui-0.0.1.tgz#0ad58b60a3de63e3974ae2c063234ca15c549c64"
-  integrity sha1-CtWLYKPeY+OXSuLAYyNMoVxUnGQ=
-
 aproba@^1.1.1:
   version "1.2.0"
   resolved "https://registry.npmjs.org/aproba/-/aproba-1.2.0.tgz#6802e6264efd18c790a1b0d517f0f2627bf2c94a"
