@@ -6,15 +6,17 @@ export const buttonTheme: ThemedComponentWithVariants<ButtonProps, ButtonVariant
   // height: { default: "HEADER_DESKTOP", tablet: "HEADER_DESKTOP" },
   variants: {
     primary: {
-      color: "success",
+      color: "white",
       backgroundColor: "aliceblue",
       textStyle: {
         color: "red"
       },
       bg: "error",
       ":hover": {
-        color: "cta",
-        bg: "error"
+        color: "grey",
+        bg: "white",
+        // @ts-ignore
+        cursor: "pointer"
       }
     },
     secondary: {

@@ -30,10 +30,9 @@ export const Text = styled(TextSpecs).withConfig<TypographyComponentProps>({
   // avoid forwarding styled-system's props to dom
   shouldForwardProp
 }).attrs<TypographyComponentProps>(({ theme, variant, bold, as, ...other }) => {
-  console.log("variant is", theme);
+  console.log("variant is", theme.typographyStyles?.variants?.[variant || "HERO"]);
   return ({
-    // @ts-ignore
-    ...theme.typographyVariants?.[variant],
+    ...theme.typographyStyles?.variants?.[variant || "HERO"],
     variant: variant,
     ...other,
     style: { fontWeight: bold ? "bold" : undefined }

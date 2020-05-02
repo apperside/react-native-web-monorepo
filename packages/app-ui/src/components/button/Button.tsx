@@ -19,17 +19,16 @@ export const ButtonSpecs = styled(TouchableOpacity)<ButtonProps>(
     variants: props.theme.button.variants
   })
 );
-// export const Button = styled(ButtonSpecs).withConfig<ButtonProps>({
+// expocrt const Button = styled(ButtonSpecs).withConfig<ButtonProps>({
 //   // avoid forwarding styled-system's props to dom
 //   shouldForwardProp: (prop) => (prop as any) === "children"
 // })({});
 ButtonSpecs.defaultProps = { ...appTheme.button };
 
-const Button: React.FC<React.ComponentProps<typeof ButtonSpecs>> = ({ variant = "primary", color, textStyle, ...props }) => {
-  console.warn("buttton theme", props.theme);
+const Button: React.FC<React.ComponentProps<typeof ButtonSpecs>> = ({ color, textStyle, ...props }) => {
   return <ButtonSpecs {...props}
     {...textStyle} >
-    <Text variant="footer"
+    <Text variant="HERO"
       {...textStyle}
     >{props.children}</Text>
   </ButtonSpecs>;

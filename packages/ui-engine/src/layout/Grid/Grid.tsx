@@ -1,7 +1,7 @@
 /* eslint-disable max-len */
 import shouldForwardProp from "@styled-system/should-forward-prop";
 import styled from "styled-components/native";
-import { border, BorderProps, color, ColorProps, flex, flexbox, FlexboxProps, layout, LayoutProps, margin, MarginProps } from "styled-system";
+import { border, color, flex, flexbox, layout, margin } from "styled-system";
 import { GridProps } from ".";
 
 const Grid = styled.View.withConfig<GridProps>({ shouldForwardProp }) <GridProps>`

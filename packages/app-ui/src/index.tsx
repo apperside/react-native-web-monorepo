@@ -13,6 +13,7 @@ import { themeColors } from "./styleguide/colors";
 import { sizesMap } from "./styleguide/sizes";
 import { spacesMap } from "./styleguide/spaces";
 import { buttonTheme } from "./components/button/Button.theme";
+import { typographyTheme } from "./components/typography/Typography.theme";
 
 export { Text, Col, Grid, Row };
 // type PropsWithVariant<T> = { variant?: T }
@@ -41,8 +42,11 @@ const themeSpecs: ThemeSpecs = {
 export const appTheme: DefaultTheme = {
   ...buildTheme(themeSpecs),
   // typographyStyles: typographyVariants,
-  button: buttonTheme
+  button: buttonTheme,
+  typographyStyles: typographyTheme
 };
+
+console.log("app theme", appTheme);
 
 export const App: React.FC = props => {
   return <BaseApp theme={appTheme} >{props.children}</BaseApp>;
