@@ -1,0 +1,27 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "typeRoots": [
+      "@types",
+      "typings",
+      "../../typings"
+    ]
+  },
+  "include": [
+    "src",
+    "typings",
+    "../../typings",
+    "**/*.ts",
+    "**/*.tsx",
+    "**/*.theme.tsx",
+    "**/*.png",
+    "../../packages/app-ui"
+  ],
+  "references": [
+    {
+      "path": "../../packages/app-ui"
+    }
+  ]
+}
