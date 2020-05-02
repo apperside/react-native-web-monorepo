@@ -2,7 +2,14 @@
   "name": "@apperside/app-ui",
   "version": "0.0.1",
   "main": "./src/index",
+  "scripts": {
+    "build": "tsc -b --incremental"
+  },
   "dependencies": {
-    "@apperside/ui-engine": "0.0.1"
+    "@apperside/ui-engine": "0.0.1",
+    "react-native-web": "^0.12.2"
+  },
+  "devDependencies": {
+    "node-sass": "^4.13.0"
   }
 }

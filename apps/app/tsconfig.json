@@ -12,7 +12,11 @@
     "index.js",
     "src",
     "../../typings",
-    "../../node_modules"
+    "../../node_modules",
+    "**/*.ts",
+    "**/*.tsx",
+    "**/*.theme.tsx",
+    "**/*.png",
   ],
   "references": [
     {

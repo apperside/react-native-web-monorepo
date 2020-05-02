@@ -69,9 +69,9 @@ export const fontSizeMap: ThemeFontSizes = {
 export const typographyVariants: VariantsProps<TypographyComponentProps, TypographyVariants> = {
   HERO: {
     fontSize: {
-      default: "1rem",
-      tablet: "1.5rem",
-      desktop: "2rem"
+      default: 50,
+      tablet: 200,
+      desktop: 300
     },
     color: "red",
     fontWeight: "bold",

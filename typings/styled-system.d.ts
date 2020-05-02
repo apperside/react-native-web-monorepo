@@ -594,7 +594,7 @@ declare module "styled-system" {
 
   export const minWidth: styleFn;
 
-  export interface HeightProps<ThemeType extends Theme = RequiredTheme, TVal = keyof ThemeSizes | number> {
+  export interface HeightProps<ThemeType extends Theme = RequiredTheme, TVal = keyof ThemeSizes | number | string> {
     /**
      * The height CSS property specifies the height of an element. By default, the property defines the height of the
      * content area. If box-sizing is set to border-box, however, it instead determines the height of the border area.

@@ -10,9 +10,9 @@
   },
   "scripts": {
     "compile": "tsc -b --incremental",
-    "android": "yarn workspace mobile android",
     "clean": "rm -rf $(mdfind -onlyin . -name node_modules)",
-    "ios": "yarn workspace mobile ios",
+    "android": "yarn workspace app android",
+    "ios": "yarn workspace TaxiApp ios",
     "web": "yarn workspace web start",
     "studio": "yarn workspace mobile studio",
     "xcode": "yarn workspace mobile xcode"
@@ -28,6 +28,8 @@
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^2.28.0",
     "@typescript-eslint/parser": "^2.28.0",
+    "@types/react": "^16.9.34",
+    "@types/react-dom": "^16.9.7",
     "eslint": "^6.8.0",
     "eslint-config-standard": "^14.1.1",
     "eslint-plugin-import": "^2.20.2",

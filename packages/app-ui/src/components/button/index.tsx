@@ -1,14 +1,8 @@
 import { BorderProps, ColorProps, FlexboxProps, LayoutProps, SizeProps, SpaceProps } from "styled-system";
 import { TypographyComponentProps, TypographyVariants } from "../typography";
+import Button from "./Button";
 
-declare module "styled-system" {
-
-  export interface CustomComponentsTheme {
-    button?: ButtonProps
-    // button?: ButtonProps
-  }
-
-}
+export type ButtonVariants = "primary" | "secondary"
 
 export type ButtonProps =
   & SpaceProps
@@ -21,5 +15,7 @@ export type ButtonProps =
     textVariant?: TypographyVariants
   }
   & LayoutProps;
-
-export { default } from "./Button";
+Button.defaultProps = {
+  variant: "primary"
+};
+export default Button;

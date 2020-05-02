@@ -11,11 +11,11 @@
   },
   "include": [
     "src",
-    "next-env.d.ts",
     "typings",
     "../../typings",
     "**/*.ts",
     "**/*.tsx",
+    "**/*.theme.tsx",
     "**/*.png",
     "../../packages/app-ui"
   ],

@@ -1,7 +1,7 @@
 const fs = require('fs')
 const path = require('path')
 const webpack = require('webpack')
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+// const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const appDirectory = fs.realpathSync(process.cwd())
 const resolveApp = relativePath => path.resolve(appDirectory, relativePath)
 
@@ -26,7 +26,7 @@ module.exports = function override(config, env) {
   config.module.rules = config.module.rules.filter(Boolean)
   config.plugins.push(
     new webpack.DefinePlugin({ __DEV__: env !== 'production' }),
-    new BundleAnalyzerPlugin()
+    // new BundleAnalyzerPlugin()
   )
   return config
 }

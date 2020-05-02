@@ -31,15 +31,12 @@ TextSpecs.defaultProps = {
 export const Text = styled(TextSpecs).withConfig<TypographyComponentProps>({
   // avoid forwarding styled-system's props to dom
   shouldForwardProp
-}).attrs<TypographyComponentProps>(({ theme, variant, bold, as, ...other }) => {
-  console.log("variant is", theme);
+}).attrs<TypographyComponentProps>(({ theme, variant = "CTA", bold, as, ...other }) => {
+  console.log("variant is", theme.typographyStyles?.[variant]);
   return ({
-    // @ts-ignore
-    ...theme.typographyVariants?.[variant],
+    ...theme.typographyStyles?.[variant],
     ...other,
     style: { fontWeight: bold ? "bold" : undefined }
   });
 })<TypographyComponentProps>(({ theme }) => ({
-  // ":hover": { ...theme.button?.hover || {} },
-  // ":disabled": { ...theme.button?.disabled, ...theme.button?.[variant]?.disabled }
 }));
