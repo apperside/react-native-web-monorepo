@@ -1,11 +1,14 @@
 import shouldForwardProp from "@styled-system/should-forward-prop";
 import styled from "styled-components";
-import { background, borderRadius, color, fontFamily, fontSize, fontStyle, fontWeight, letterSpacing, lineHeight, size, space, textAlign, textStyle, width } from "styled-system";
+import { background, borderRadius, variant, color, fontFamily, fontSize, fontStyle, fontWeight, letterSpacing, lineHeight, size, space, textAlign, textStyle, width } from "styled-system";
 import { TypographyComponentProps } from ".";
 
 // eslint-disable-next-line max-len
 // const variants = (theme: DefaultTheme): { variants: TypographyVariantsConfig } => ({ variants: theme.typography.variants });
-export const TextSpecs = styled.div<TypographyComponentProps>(
+export const Text = styled.div.withConfig<TypographyComponentProps>({
+  // avoid forwarding styled-system's props to dom
+  shouldForwardProp
+})<TypographyComponentProps>(
   space,
   fontSize,
   fontStyle,
@@ -19,25 +22,12 @@ export const TextSpecs = styled.div<TypographyComponentProps>(
   lineHeight,
   textAlign,
   background,
-  width
-  // props => variant(variants(props.theme))
+  width,
+  props => variant({
+    variants: props.theme.typographyStyles.variants
+  })
 );
 // @ts-ignore
-TextSpecs.defaultProps = {
-  variant: ""
+Text.defaultProps = {
+  variant: "HERO"
 };
-export const Text = styled(TextSpecs).withConfig<TypographyComponentProps>({
-  // avoid forwarding styled-system's props to dom
-  shouldForwardProp
-}).attrs<TypographyComponentProps>(({ theme, variant, bold, as, ...other }) => {
-  console.log("variant is", theme.typographyStyles?.variants?.[variant || "HERO"]);
-  return ({
-    ...theme.typographyStyles?.variants?.[variant || "HERO"],
-    // variant: variant,
-    ...other,
-    style: { fontWeight: bold ? "bold" : undefined }
-  });
-})<TypographyComponentProps>(({ theme }) => ({
-  // ":hover": { ...theme.button?.hover || {} },
-  // ":disabled": { ...theme.button?.disabled, ...theme.button?.[variant]?.disabled }
-}));

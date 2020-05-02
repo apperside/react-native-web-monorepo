@@ -5,7 +5,7 @@ export const typographyTheme: ThemedComponentWithVariants<TypographyComponentPro
   variants: {
     HERO: {
       fontSize: 25,
-      color: "red",
+      // color: "red",
       // fontWeight: "bold",
       fontFamily: "black"
     },

@@ -1,17 +1,23 @@
 
 import { ThemedComponentWithVariants } from "@apperside/ui-engine/src/theme";
-import { ButtonProps, ButtonVariants } from ".";
+import { ButtonProps } from ".";
+
+export type ButtonVariants = "primary" | "secondary"
+
 export const buttonTheme: ThemedComponentWithVariants<ButtonProps, ButtonVariants> = {
-  border: "redThin",
+  // border: "redThin",
   // height: { default: "HEADER_DESKTOP", tablet: "HEADER_DESKTOP" },
   variants: {
     primary: {
       color: "white",
-      backgroundColor: "aliceblue",
+      backgroundColor: "error",
+      alignContent: "center",
+      justifyContent: "center",
       textStyle: {
-        color: "red"
+        textAlign: "center",
+        color: "white"
       },
-      bg: "error",
+      // bg: "error",
       ":hover": {
         color: "grey",
         bg: "white",

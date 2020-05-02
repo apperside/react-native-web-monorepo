@@ -1,13 +1,12 @@
 import React from "react";
 import { TouchableOpacity } from "react-native";
-import styled from "styled-components/native";
+import styled, { useTheme } from "styled-components/native";
 import { border, color, flexbox, layout, size, space, variant } from "styled-system";
 import { ButtonProps } from ".";
 import { appTheme } from "../..";
 import { Text } from "../typography";
+import shouldForwardProp from "@styled-system/should-forward-prop";
 
-// eslint-disable-next-line max-len
-// const variants = (theme: DefaultTheme): { variants: TypographyVariantsConfig } => ({ variants: theme.typography.variants });
 export const ButtonSpecs = styled(TouchableOpacity)<ButtonProps>(
   space,
   size,
@@ -19,19 +18,26 @@ export const ButtonSpecs = styled(TouchableOpacity)<ButtonProps>(
     variants: props.theme.button.variants
   })
 );
-// expocrt const Button = styled(ButtonSpecs).withConfig<ButtonProps>({
-//   // avoid forwarding styled-system's props to dom
-//   shouldForwardProp: (prop) => (prop as any) === "children"
-// })({});
+
 ButtonSpecs.defaultProps = { ...appTheme.button };
 
-const Button: React.FC<React.ComponentProps<typeof ButtonSpecs>> = ({ color, textStyle, ...props }) => {
+const Button: React.FC<React.ComponentProps<typeof ButtonSpecs>> = (
+  {
+    textStyle: inlineTextStyle,
+    variant,
+    ...props
+  }) => {
+  const theme = useTheme();
+  const themeTextStyle = theme.button.variants[variant]?.textStyle;
   return <ButtonSpecs {...props}
-    {...textStyle} >
-    <Text variant="HERO"
-      {...textStyle}
+    variant={variant} >
+    <Text
+      textAlign="center"
+      {...themeTextStyle}
+      {...inlineTextStyle}
+      {...props}
     >{props.children}</Text>
-  </ButtonSpecs>;
+  </ButtonSpecs >;
 };
 
 export default Button;

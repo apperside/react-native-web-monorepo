@@ -4,7 +4,7 @@ import { border, color, flexbox, layout, size, space, variant } from "styled-sys
 import { ButtonProps } from ".";
 import { appTheme } from "../..";
 
-export const ButtonSpecs = styled.button<ButtonProps>(
+const Button = styled.button<ButtonProps>(
   space,
   size,
   layout,
@@ -16,17 +16,6 @@ export const ButtonSpecs = styled.button<ButtonProps>(
   })
 );
 
-// export const Button = styled(ButtonSpecs).withConfig<ButtonProps>({
-//   // avoid forwarding styled-system's props to dom
-//   shouldForwardProp: (prop) => (prop as any) === "children"
-// })({});
-ButtonSpecs.defaultProps = { ...appTheme.button };
-
-const Button: React.FC<React.ComponentProps<typeof ButtonSpecs>> = ({ color, textStyle, ...props }) => {
-  return <ButtonSpecs {...props}
-    {...textStyle} >
-    {props.children}
-  </ButtonSpecs>;
-};
+Button.defaultProps = { ...appTheme.button };
 
 export default Button;

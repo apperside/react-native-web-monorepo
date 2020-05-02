@@ -1,12 +1,14 @@
-import * as CSS from "csstype";
-import styled, { DefaultTheme } from "styled-components/native";
-import { background, BackgroundImageProps, borderRadius, BorderRadiusProps, color, ColorProps, fontFamily, FontFamilyProps, fontSize, fontStyle, fontWeight, letterSpacing, lineHeight, size, space, SpaceProps, textAlign, textStyle, TextStyleProps, TypographyProps as SSTypographyProps, variant, width, WidthProps } from "styled-system";
 import shouldForwardProp from "@styled-system/should-forward-prop";
+import styled from "styled-components/native";
+import { background, borderRadius, variant, color, fontFamily, fontSize, fontStyle, fontWeight, letterSpacing, lineHeight, size, space, textAlign, textStyle, width } from "styled-system";
 import { TypographyComponentProps } from ".";
 
 // eslint-disable-next-line max-len
 // const variants = (theme: DefaultTheme): { variants: TypographyVariantsConfig } => ({ variants: theme.typography.variants });
-export const TextSpecs = styled.Text<TypographyComponentProps>(
+export const Text = styled.Text.withConfig<TypographyComponentProps>({
+  // avoid forwarding styled-system's props to dom
+  shouldForwardProp
+})<TypographyComponentProps>(
   space,
   fontSize,
   fontStyle,
@@ -20,22 +22,12 @@ export const TextSpecs = styled.Text<TypographyComponentProps>(
   lineHeight,
   textAlign,
   background,
-  width
-  // props => variant(variants(props.theme))
+  width,
+  props => variant({
+    variants: props.theme.typographyStyles.variants
+  })
 );
 // @ts-ignore
-
-TextSpecs.defaultProps = {
-  variant: "H1"
+Text.defaultProps = {
+  variant: "HERO"
 };
-export const Text = styled(TextSpecs).withConfig<TypographyComponentProps>({
-  // avoid forwarding styled-system's props to dom
-  shouldForwardProp
-}).attrs<TypographyComponentProps>(({ theme, variant = "CTA", bold, as, ...other }) => {
-  return ({
-    ...theme.typographyStyles?.variants?.[variant || "HERO"],
-    ...other,
-    style: { fontWeight: bold ? "bold" : undefined }
-  });
-})<TypographyComponentProps>(({ theme }) => ({
-}));

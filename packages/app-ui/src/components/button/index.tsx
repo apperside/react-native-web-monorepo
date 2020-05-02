@@ -2,8 +2,6 @@ import { BorderProps, ColorProps, FlexboxProps, LayoutProps, SizeProps, SpacePro
 import { TypographyComponentProps, TypographyVariants } from "../typography";
 import Button from "./Button";
 
-export type ButtonVariants = "primary" | "secondary"
-
 export type ButtonProps =
   & SpaceProps
   & SizeProps
@@ -11,8 +9,7 @@ export type ButtonProps =
   & BorderProps
   & FlexboxProps
   & {
-    textStyle?: TypographyComponentProps,
-    textVariant?: TypographyVariants
+    textStyle?: TypographyComponentProps
   }
   & LayoutProps;
 Button.defaultProps = {
