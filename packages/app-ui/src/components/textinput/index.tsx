@@ -36,27 +36,13 @@ export interface CustomComponentsTheme {
   TextInput?: ThemedComponentWithVariants<TextInputProps, TextInputVariants>
   // button?: ButtonProps
 }
-declare module "styled-system" {
-
-  export interface ThemeFontFamilies {
-    heading: string,
-    body: string
-    bold: string
-  }
-
-  export interface ThemeFontSizes {
-    small: string
-    medium: string
-    big: string
-    [key: string]: string
-
-  }
-}
 
 export const fontFamilies: ThemeFontFamilies = {
-  heading: "GTAmerica-Extended-Bold, Helvetica, Arial, sans-serif",
-  body: "GTAmerica-Regular, Helvetica, Arial, sans-serif",
-  bold: "GTAmerica-Bold, Helvetica, Arial, sans-serif"
+  regular: "GTAmerica-Regular",
+  medium: "GTAmerica-Medium",
+  bold: "GTAmerica-Bold",
+  black: "GTAmerica-Black",
+  extended: "GTAmerica-Extended-Bold"
 };
 
 export const fontSizeMap: ThemeFontSizes = {

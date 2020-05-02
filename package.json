@@ -14,8 +14,8 @@
     "android": "yarn workspace app android",
     "ios": "yarn workspace TaxiApp ios",
     "web": "yarn workspace web start",
-    "studio": "yarn workspace mobile studio",
-    "xcode": "yarn workspace mobile xcode"
+    "studio": "yarn workspace TaxiApp studio",
+    "xcode": "yarn workspace TaxiApp xcode"
   },
   "dependencies": {
     "@styled-system/should-forward-prop": "^5.1.5",

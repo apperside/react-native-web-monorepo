@@ -6,7 +6,7 @@ import React from "react";
 import { DefaultTheme } from "styled-components";
 import { Theme } from "styled-system";
 import { ButtonProps, ButtonVariants } from "./components/button";
-import { fontFamilies, fontSizeMap, Text, TypographyComponentProps as MYTypographyProps, TypographyVariants, typographyVariants } from "./components/typography";
+import { fontFamilies, fontSizeMap, Text, TypographyComponentProps as MYTypographyProps, TypographyVariants } from "./components/typography";
 import { themeBordersMap, themeBorderWidthsMap } from "./styleguide/borders";
 import { breakpointsMap } from "./styleguide/breakpoints";
 import { themeColors } from "./styleguide/colors";
@@ -45,8 +45,6 @@ export const appTheme: DefaultTheme = {
   button: buttonTheme,
   typographyStyles: typographyTheme
 };
-
-console.log("app theme", appTheme);
 
 export const App: React.FC = props => {
   return <BaseApp theme={appTheme} >{props.children}</BaseApp>;

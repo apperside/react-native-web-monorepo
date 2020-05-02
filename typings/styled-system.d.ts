@@ -473,7 +473,7 @@ declare module "styled-system" {
 
   export const fontWeight: styleFn;
 
-  export interface LineHeightProps<ThemeType extends Theme = RequiredTheme, TVal = ThemeValue<"lineHeights", ThemeType> | number> {
+  export interface LineHeightProps<ThemeType extends Theme = RequiredTheme, TVal = ThemeValue<"lineHeights", ThemeType> | number | string> {
     /**
      * The line-height CSS property sets the amount of space used for lines, such as in text. On block-level elements,
      * it specifies the minimum height of line boxes within the element.

@@ -20,6 +20,12 @@
 		72F2D2069C7340FF36890970 /* libPods-TaxiApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 205DDB7A2A70D2AFEB0BE2AF /* libPods-TaxiApp.a */; };
 		BF39A6CFD61CAF08C0B15957 /* libPods-TaxiApp-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AB49701EB425A9E1C321FC31 /* libPods-TaxiApp-tvOSTests.a */; };
 		DFCC480DAC81B996A3CE2E60 /* libPods-TaxiApp-TaxiAppTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 042D2393252F53C19E8312C3 /* libPods-TaxiApp-TaxiAppTests.a */; };
+		FC9183E7245DF46B00D3F832 /* GTAmerica-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 22A27C35EEF74FE0B81E8165 /* GTAmerica-Black.ttf */; };
+		FC9183E8245DF46B00D3F832 /* GTAmerica-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DCD9B159BBB34AECA5D5C823 /* GTAmerica-Bold.ttf */; };
+		FC9183E9245DF46B00D3F832 /* GTAmerica-ExtendedRegular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4A1BFAEA39114AAEB3A61B4B /* GTAmerica-ExtendedRegular.ttf */; };
+		FC9183EA245DF46B00D3F832 /* GTAmerica-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = ADCFC83400D24083946A4A53 /* GTAmerica-Light.ttf */; };
+		FC9183EB245DF46B00D3F832 /* GTAmerica-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FDDFA93EEE504F14ACF676B7 /* GTAmerica-Medium.ttf */; };
+		FC9183EC245DF46B00D3F832 /* GTAmerica-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6C498934CF9E4E30BEE362E1 /* GTAmerica-Regular.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +51,9 @@
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* TaxiAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TaxiAppTests.m; sourceTree = "<group>"; };
 		042D2393252F53C19E8312C3 /* libPods-TaxiApp-TaxiAppTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TaxiApp-TaxiAppTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0CBC4353008347B093131939 /* GT-America-Standard-Light.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "GT-America-Standard-Light.otf"; path = "../assets/fonts/GT-America-Standard-Light.otf"; sourceTree = "<group>"; };
+		0DC84FAA4A904231BDBFC54D /* GT-America-Standard-Black.woff2 */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "GT-America-Standard-Black.woff2"; path = "../assets/fonts/GT-America-Standard-Black.woff2"; sourceTree = "<group>"; };
+		0DE676F8B46A4C67A41BC9BF /* GT-America-Standard-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "GT-America-Standard-Medium.ttf"; path = "../assets/fonts/GT-America-Standard-Medium.ttf"; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* TaxiApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TaxiApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = TaxiApp/AppDelegate.h; sourceTree = "<group>"; };
 		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = TaxiApp/AppDelegate.m; sourceTree = "<group>"; };
@@ -54,18 +63,49 @@
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = TaxiApp/main.m; sourceTree = "<group>"; };
 		1B25E06E93E1DE606FE62818 /* libPods-TaxiApp-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TaxiApp-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		205DDB7A2A70D2AFEB0BE2AF /* libPods-TaxiApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TaxiApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		21B61127AB814432ACF2BBDE /* GT-America-Extended-Regular.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "GT-America-Extended-Regular.otf"; path = "../assets/fonts/GT-America-Extended-Regular.otf"; sourceTree = "<group>"; };
+		21BF1918E4824898818555A3 /* GT-America-Standard-Medium.woff2 */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "GT-America-Standard-Medium.woff2"; path = "../assets/fonts/GT-America-Standard-Medium.woff2"; sourceTree = "<group>"; };
+		22A27C35EEF74FE0B81E8165 /* GTAmerica-Black.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "GTAmerica-Black.ttf"; path = "../assets/fonts/GTAmerica-Black.ttf"; sourceTree = "<group>"; };
+		2812CF04158A44929A0CE91B /* GT-America-Extended-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "GT-America-Extended-Regular.ttf"; path = "../assets/fonts/GT-America-Extended-Regular.ttf"; sourceTree = "<group>"; };
+		2853468FF6754081A0D3EE10 /* GT-America-Standard-Black.woff */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "GT-America-Standard-Black.woff"; path = "../assets/fonts/GT-America-Standard-Black.woff"; sourceTree = "<group>"; };
+		28E76FD1F36942EAB32D3415 /* GT-America-Standard-Light.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "GT-America-Standard-Light.ttf"; path = "../assets/fonts/GT-America-Standard-Light.ttf"; sourceTree = "<group>"; };
+		2A5D92BAB0D24E08B46D36BD /* GT-America-Standard-Light.woff */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "GT-America-Standard-Light.woff"; path = "../assets/fonts/GT-America-Standard-Light.woff"; sourceTree = "<group>"; };
 		2D02E47B1E0B4A5D006451C7 /* TaxiApp-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TaxiApp-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D02E4901E0B4A5D006451C7 /* TaxiApp-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "TaxiApp-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		47093157656EA22BD4D99CE7 /* Pods-TaxiApp-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TaxiApp-tvOS.debug.xcconfig"; path = "Target Support Files/Pods-TaxiApp-tvOS/Pods-TaxiApp-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
+		4A1BFAEA39114AAEB3A61B4B /* GTAmerica-ExtendedRegular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "GTAmerica-ExtendedRegular.ttf"; path = "../assets/fonts/GTAmerica-ExtendedRegular.ttf"; sourceTree = "<group>"; };
+		4B25F43436994B1BA23C160E /* GT-America-Standard-Medium.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "GT-America-Standard-Medium.otf"; path = "../assets/fonts/GT-America-Standard-Medium.otf"; sourceTree = "<group>"; };
+		4B36809E0C6F4A9FBD769BF3 /* GT-America-Standard-Bold.woff */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "GT-America-Standard-Bold.woff"; path = "../assets/fonts/GT-America-Standard-Bold.woff"; sourceTree = "<group>"; };
 		6158F79C17B46D287049C7B7 /* Pods-TaxiApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TaxiApp.release.xcconfig"; path = "Target Support Files/Pods-TaxiApp/Pods-TaxiApp.release.xcconfig"; sourceTree = "<group>"; };
+		6616E19DE8724A0EACF680C3 /* GT-America-Extended-Regular.woff2 */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "GT-America-Extended-Regular.woff2"; path = "../assets/fonts/GT-America-Extended-Regular.woff2"; sourceTree = "<group>"; };
+		6C498934CF9E4E30BEE362E1 /* GTAmerica-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "GTAmerica-Regular.ttf"; path = "../assets/fonts/GTAmerica-Regular.ttf"; sourceTree = "<group>"; };
+		6CEA984617F840188AB55604 /* GT-America-Standard-Bold.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "GT-America-Standard-Bold.otf"; path = "../assets/fonts/GT-America-Standard-Bold.otf"; sourceTree = "<group>"; };
 		7D15B6D9ED652D4B1FEE9252 /* Pods-TaxiApp-TaxiAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TaxiApp-TaxiAppTests.debug.xcconfig"; path = "Target Support Files/Pods-TaxiApp-TaxiAppTests/Pods-TaxiApp-TaxiAppTests.debug.xcconfig"; sourceTree = "<group>"; };
+		841885C1A5314EA1B7B60307 /* GTAmerica-ExtendedBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "GTAmerica-ExtendedBold.ttf"; path = "../assets/fonts/GTAmerica-ExtendedBold.ttf"; sourceTree = "<group>"; };
+		9366131D118A4EFBA608AB05 /* GT-America-Standard-Regular.woff */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "GT-America-Standard-Regular.woff"; path = "../assets/fonts/GT-America-Standard-Regular.woff"; sourceTree = "<group>"; };
+		9E5198629FA9400F8D8AF174 /* GT-America-Standard-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "GT-America-Standard-Regular.ttf"; path = "../assets/fonts/GT-America-Standard-Regular.ttf"; sourceTree = "<group>"; };
+		A3080C918AD54A5083D7B701 /* GT-America-Standard-Medium.woff */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "GT-America-Standard-Medium.woff"; path = "../assets/fonts/GT-America-Standard-Medium.woff"; sourceTree = "<group>"; };
+		A38E9BC1826F48E881559F08 /* GTAmerica-ExtendedBold.woff */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "GTAmerica-ExtendedBold.woff"; path = "../assets/fonts/GTAmerica-ExtendedBold.woff"; sourceTree = "<group>"; };
 		A7BEAF505B5D090DAD9E8130 /* Pods-TaxiApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TaxiApp.debug.xcconfig"; path = "Target Support Files/Pods-TaxiApp/Pods-TaxiApp.debug.xcconfig"; sourceTree = "<group>"; };
 		AB49701EB425A9E1C321FC31 /* libPods-TaxiApp-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TaxiApp-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		ADCFC83400D24083946A4A53 /* GTAmerica-Light.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "GTAmerica-Light.ttf"; path = "../assets/fonts/GTAmerica-Light.ttf"; sourceTree = "<group>"; };
+		AE24D1AB05424CA3AD188787 /* GT-America-Standard-Black.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "GT-America-Standard-Black.otf"; path = "../assets/fonts/GT-America-Standard-Black.otf"; sourceTree = "<group>"; };
+		B8D9857BB1624E27B04E0D5B /* GT-America-Extended-Regular.woff */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "GT-America-Extended-Regular.woff"; path = "../assets/fonts/GT-America-Extended-Regular.woff"; sourceTree = "<group>"; };
+		B977DBD8EFC748ACB41C640B /* GT-America-Standard-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "GT-America-Standard-Bold.ttf"; path = "../assets/fonts/GT-America-Standard-Bold.ttf"; sourceTree = "<group>"; };
 		BADBFA625095F0500030CBB3 /* Pods-TaxiApp-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TaxiApp-tvOS.release.xcconfig"; path = "Target Support Files/Pods-TaxiApp-tvOS/Pods-TaxiApp-tvOS.release.xcconfig"; sourceTree = "<group>"; };
+		C934B95298BD43C79C4EC941 /* GT-America-Standard-Bold.woff2 */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "GT-America-Standard-Bold.woff2"; path = "../assets/fonts/GT-America-Standard-Bold.woff2"; sourceTree = "<group>"; };
+		D20675515E924C23B24FA95C /* GTAmerica-ExtendedBold.svg */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "GTAmerica-ExtendedBold.svg"; path = "../assets/fonts/GTAmerica-ExtendedBold.svg"; sourceTree = "<group>"; };
+		D3CD4AA0447046F690F9F0CD /* GT-America-Standard-Black.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "GT-America-Standard-Black.ttf"; path = "../assets/fonts/GT-America-Standard-Black.ttf"; sourceTree = "<group>"; };
+		DCD9B159BBB34AECA5D5C823 /* GTAmerica-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "GTAmerica-Bold.ttf"; path = "../assets/fonts/GTAmerica-Bold.ttf"; sourceTree = "<group>"; };
+		DD27B2C52F2F4890A4D06539 /* GT-America-Standard-Regular.woff2 */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "GT-America-Standard-Regular.woff2"; path = "../assets/fonts/GT-America-Standard-Regular.woff2"; sourceTree = "<group>"; };
+		E568347730254081BC99FC37 /* GT-America-Standard-Light.woff2 */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "GT-America-Standard-Light.woff2"; path = "../assets/fonts/GT-America-Standard-Light.woff2"; sourceTree = "<group>"; };
 		E5BB049B8C217A81AD78798F /* Pods-TaxiApp-TaxiAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TaxiApp-TaxiAppTests.release.xcconfig"; path = "Target Support Files/Pods-TaxiApp-TaxiAppTests/Pods-TaxiApp-TaxiAppTests.release.xcconfig"; sourceTree = "<group>"; };
+		EA720492621E432E95116D4A /* GT-America-Standard-Regular.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "GT-America-Standard-Regular.otf"; path = "../assets/fonts/GT-America-Standard-Regular.otf"; sourceTree = "<group>"; };
+		ECBF3CED588448D0B6EE691A /* GTAmerica-ExtendedBold.woff2 */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "GTAmerica-ExtendedBold.woff2"; path = "../assets/fonts/GTAmerica-ExtendedBold.woff2"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
 		FAB103F81443AAE90564CD24 /* Pods-TaxiApp-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TaxiApp-tvOSTests.release.xcconfig"; path = "Target Support Files/Pods-TaxiApp-tvOSTests/Pods-TaxiApp-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
+		FDDFA93EEE504F14ACF676B7 /* GTAmerica-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "GTAmerica-Medium.ttf"; path = "../assets/fonts/GTAmerica-Medium.ttf"; sourceTree = "<group>"; };
 		FF88DC17F73BD73DCA553D83 /* Pods-TaxiApp-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TaxiApp-tvOSTests.debug.xcconfig"; path = "Target Support Files/Pods-TaxiApp-tvOSTests/Pods-TaxiApp-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -122,6 +162,47 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		051E4510DB424376B043DCCD /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				D20675515E924C23B24FA95C /* GTAmerica-ExtendedBold.svg */,
+				21B61127AB814432ACF2BBDE /* GT-America-Extended-Regular.otf */,
+				2812CF04158A44929A0CE91B /* GT-America-Extended-Regular.ttf */,
+				B8D9857BB1624E27B04E0D5B /* GT-America-Extended-Regular.woff */,
+				6616E19DE8724A0EACF680C3 /* GT-America-Extended-Regular.woff2 */,
+				AE24D1AB05424CA3AD188787 /* GT-America-Standard-Black.otf */,
+				D3CD4AA0447046F690F9F0CD /* GT-America-Standard-Black.ttf */,
+				2853468FF6754081A0D3EE10 /* GT-America-Standard-Black.woff */,
+				0DC84FAA4A904231BDBFC54D /* GT-America-Standard-Black.woff2 */,
+				6CEA984617F840188AB55604 /* GT-America-Standard-Bold.otf */,
+				B977DBD8EFC748ACB41C640B /* GT-America-Standard-Bold.ttf */,
+				4B36809E0C6F4A9FBD769BF3 /* GT-America-Standard-Bold.woff */,
+				C934B95298BD43C79C4EC941 /* GT-America-Standard-Bold.woff2 */,
+				0CBC4353008347B093131939 /* GT-America-Standard-Light.otf */,
+				28E76FD1F36942EAB32D3415 /* GT-America-Standard-Light.ttf */,
+				2A5D92BAB0D24E08B46D36BD /* GT-America-Standard-Light.woff */,
+				E568347730254081BC99FC37 /* GT-America-Standard-Light.woff2 */,
+				4B25F43436994B1BA23C160E /* GT-America-Standard-Medium.otf */,
+				0DE676F8B46A4C67A41BC9BF /* GT-America-Standard-Medium.ttf */,
+				A3080C918AD54A5083D7B701 /* GT-America-Standard-Medium.woff */,
+				21BF1918E4824898818555A3 /* GT-America-Standard-Medium.woff2 */,
+				EA720492621E432E95116D4A /* GT-America-Standard-Regular.otf */,
+				9E5198629FA9400F8D8AF174 /* GT-America-Standard-Regular.ttf */,
+				9366131D118A4EFBA608AB05 /* GT-America-Standard-Regular.woff */,
+				DD27B2C52F2F4890A4D06539 /* GT-America-Standard-Regular.woff2 */,
+				841885C1A5314EA1B7B60307 /* GTAmerica-ExtendedBold.ttf */,
+				A38E9BC1826F48E881559F08 /* GTAmerica-ExtendedBold.woff */,
+				ECBF3CED588448D0B6EE691A /* GTAmerica-ExtendedBold.woff2 */,
+				22A27C35EEF74FE0B81E8165 /* GTAmerica-Black.ttf */,
+				DCD9B159BBB34AECA5D5C823 /* GTAmerica-Bold.ttf */,
+				4A1BFAEA39114AAEB3A61B4B /* GTAmerica-ExtendedRegular.ttf */,
+				ADCFC83400D24083946A4A53 /* GTAmerica-Light.ttf */,
+				FDDFA93EEE504F14ACF676B7 /* GTAmerica-Medium.ttf */,
+				6C498934CF9E4E30BEE362E1 /* GTAmerica-Regular.ttf */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 		13B07FAE1A68108700A75B9A /* TaxiApp */ = {
 			isa = PBXGroup;
 			children = (
@@ -165,6 +246,7 @@
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				9365E129B4D1DD6045389711 /* Pods */,
+				051E4510DB424376B043DCCD /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -194,7 +276,6 @@
 				FF88DC17F73BD73DCA553D83 /* Pods-TaxiApp-tvOSTests.debug.xcconfig */,
 				FAB103F81443AAE90564CD24 /* Pods-TaxiApp-tvOSTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -338,6 +419,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC9183E7245DF46B00D3F832 /* GTAmerica-Black.ttf in Resources */,
+				FC9183E8245DF46B00D3F832 /* GTAmerica-Bold.ttf in Resources */,
+				FC9183E9245DF46B00D3F832 /* GTAmerica-ExtendedRegular.ttf in Resources */,
+				FC9183EA245DF46B00D3F832 /* GTAmerica-Light.ttf in Resources */,
+				FC9183EB245DF46B00D3F832 /* GTAmerica-Medium.ttf in Resources */,
+				FC9183EC245DF46B00D3F832 /* GTAmerica-Regular.ttf in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
 			);

@@ -1,135 +1,48 @@
 @font-face {
-  font-family: "GTAmerica-Extended-Bold";
-  src: url("assets/fonts/GTAmerica-ExtendedBold.eot");
-  src: url("assets/fonts/GTAmerica-ExtendedBold.eot?#iefix") format("embedded-opentype"),
-      url("assets/fonts/GTAmerica-ExtendedBold.woff2") format("woff2"),
-      url("assets/fonts/GTAmerica-ExtendedBold.woff") format("woff"),
-      url("assets/fonts/GTAmerica-ExtendedBold.ttf") format("truetype"),
-      url("assets/fonts/GTAmerica-ExtendedBold.svg#GTAmerica-ExtendedBold") format("svg");
-  font-weight: bold;
+  font-family: 'GTAmerica-Regular';
+  src: url('assets/fonts/GTAmerica-Regular.woff2') format('woff2'),
+      url('assets/fonts/GTAmerica-Regular.woff') format('woff');
+  font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
-  font-family: "GTAmerica-Extended";
-  //font-style: normal;
-  //font-weight: 400;
-  src: url("assets/fonts/GT-America-Extended-Regular.eot");
-  /* IE9 Compat Modes */
-  src: url("assets/fonts/GT-America-Extended-Regular.eot?#iefix") format("embedded-opentype"),
-      /* IE6-IE8 */
-      url("assets/fonts/GT-America-Extended-Regular.woff2") format("woff2"),
-      /* Super Modern Browsers */
-      url("assets/fonts/GT-America-Extended-Regular.woff") format("woff"),
-      /* Modern Browsers */
-      url("assets/fonts/GT-America-Extended-Regular.ttf") format("truetype"),
-      /* Safari, Android, iOS */
-      url("assets/fonts/GT-America-Extended-Regular.otf") format("opentype");
-  /* Legacy iOS */
+  font-family: 'GTAmerica-Medium';
+  src: url('assets/fonts/GTAmerica-Medium.woff2') format('woff2'),
+      url('assets/fonts/GTAmerica-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
 }
 
 @font-face {
-  font-family: "GTAmerica-Regular";
-  //font-style: normal;
-  //font-weight: 400;
-  src: url("assets/fonts/GT-America-Standard-Regular.eot");
-  /* IE9 Compat Modes */
-  src: url("assets/fonts/GT-America-Standard-Regular.eot?#iefix") format("embedded-opentype"),
-      /* IE6-IE8 */
-      url("assets/fonts/GT-America-Standard-Regular.woff2") format("woff2"),
-      /* Super Modern Browsers */
-      url("assets/fonts/GT-America-Standard-Regular.woff") format("woff"),
-      /* Modern Browsers */
-      url("assets/fonts/GT-America-Standard-Regular.ttf") format("truetype"),
-      /* Safari, Android, iOS */
-      url("assets/fonts/GT-America-Standard-Regular.otf") format("opentype");
-  /* Legacy iOS */
+  font-family: 'GTAmerica-ExtendedRegular';
+  src: url('assets/fonts/GTAmerica-ExtendedRegular.woff2') format('woff2'),
+      url('assets/fonts/GTAmerica-ExtendedRegular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
 }
 
 @font-face {
-  font-family: "GTAmerica-Medium";
-  //font-style: normal;
-  //font-weight: 400;
-  src: url("assets/fonts/GT-America-Standard-Medium.eot");
-  /* IE9 Compat Modes */
-  src: url("assets/fonts/GT-America-Standard-Medium.eot?#iefix") format("embedded-opentype"),
-      /* IE6-IE8 */
-      url("assets/fonts/GT-America-Standard-Medium.woff2") format("woff2"),
-      /* Super Modern Browsers */
-      url("assets/fonts/GT-America-Standard-Medium.woff") format("woff"),
-      /* Modern Browsers */
-      url("assets/fonts/GT-America-Standard-Medium.ttf") format("truetype"),
-      /* Safari, Android, iOS */
-      url("assets/fonts/GT-America-Standard-Medium.otf") format("opentype");
-  /* Legacy iOS */
+  font-family: 'GTAmerica-Black';
+  src: url('assets/fonts/GTAmerica-Black.woff2') format('woff2'),
+      url('assets/fonts/GTAmerica-Black.woff') format('woff');
+  font-weight: 900;
+  font-style: normal;
 }
 
 @font-face {
-  font-family: "GTAmerica-Light";
-  //font-style: normal;
-  //font-weight: 400;
-  src: url("assets/fonts/GT-America-Standard-Light.eot");
-  /* IE9 Compat Modes */
-  src: url("assets/fonts/GT-America-Standard-Light.eot?#iefix") format("embedded-opentype"),
-      /* IE6-IE8 */
-      url("assets/fonts/GT-America-Standard-Light.woff2") format("woff2"),
-      /* Super Modern Browsers */
-      url("assets/fonts/GT-America-Standard-Light.woff") format("woff"),
-      /* Modern Browsers */
-      url("assets/fonts/GT-America-Standard-Light.ttf") format("truetype"),
-      /* Safari, Android, iOS */
-      url("assets/fonts/GT-America-Standard-Light.otf") format("opentype");
-  /* Legacy iOS */
+  font-family: 'GTAmerica-Light';
+  src: url('assets/fonts/GTAmerica-Light.woff2') format('woff2'),
+      url('assets/fonts/GTAmerica-Light.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
 }
 
 @font-face {
-  font-family: "GTAmerica-Bold";
-  //font-style: normal;
-  //font-weight: 400;
-  src: url("assets/fonts/GT-America-Standard-Bold.eot");
-  /* IE9 Compat Modes */
-  src: url("assets/fonts/GT-America-Standard-Bold.eot?#iefix") format("embedded-opentype"),
-      /* IE6-IE8 */
-      url("assets/fonts/GT-America-Standard-Bold.woff2") format("woff2"),
-      /* Super Modern Browsers */
-      url("assets/fonts/GT-America-Standard-Bold.woff") format("woff"),
-      /* Modern Browsers */
-      url("assets/fonts/GT-America-Standard-Bold.ttf") format("truetype"),
-      /* Safari, Android, iOS */
-      url("assets/fonts/GT-America-Standard-Bold.otf") format("opentype");
-  /* Legacy iOS */
+  font-family: 'GTAmerica-Bold';
+  src: url('assets/fonts/GTAmerica-Bold.woff2') format('woff2'),
+      url('assets/fonts/GTAmerica-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
 }
 
-@font-face {
-  font-family: "GTAmerica-Black";
-  //font-style: normal;
-  //font-weight: 400;
-  src: url("assets/fonts/GT-America-Standard-Black.eot");
-  /* IE9 Compat Modes */
-  src: url("assets/fonts/GT-America-Standard-Black.eot?#iefix") format("embedded-opentype"),
-      /* IE6-IE8 */
-      url("assets/fonts/GT-America-Standard-Black.woff2") format("woff2"),
-      /* Super Modern Browsers */
-      url("assets/fonts/GT-America-Standard-Black.woff") format("woff"),
-      /* Modern Browsers */
-      url("assets/fonts/GT-America-Standard-Black.ttf") format("truetype"),
-      /* Safari, Android, iOS */
-      url("assets/fonts/GT-America-Standard-Black.otf") format("opentype");
-  /* Legacy iOS */
-}
-
-@font-face {
-  font-family: "GT-America";
-  src: url("assets/fonts/GT-America-Standard-Light.eot");
-  /* IE9 Compat Modes */
-  src: url("assets/fonts/GT-America-Standard-Light.eot?#iefix") format("embedded-opentype"),
-      /* IE6-IE8 */
-      url("assets/fonts/GT-America-Standard-Light.woff2") format("woff2"),
-      /* Super Modern Browsers */
-      url("assets/fonts/GT-America-Standard-Light.woff") format("woff"),
-      /* Modern Browsers */
-      url("assets/fonts/GT-America-Standard-Light.ttf") format("truetype"),
-      /* Safari, Android, iOS */
-      url("assets/fonts/GT-America-Standard-Light.otf") format("opentype");
-  /* Legacy iOS */
-}

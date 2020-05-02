@@ -33,7 +33,7 @@ export const Text = styled(TextSpecs).withConfig<TypographyComponentProps>({
   console.log("variant is", theme.typographyStyles?.variants?.[variant || "HERO"]);
   return ({
     ...theme.typographyStyles?.variants?.[variant || "HERO"],
-    variant: variant,
+    // variant: variant,
     ...other,
     style: { fontWeight: bold ? "bold" : undefined }
   });

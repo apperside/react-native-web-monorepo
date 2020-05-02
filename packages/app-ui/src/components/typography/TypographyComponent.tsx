@@ -31,9 +31,9 @@ TextSpecs.defaultProps = {
 export const Text = styled(TextSpecs).withConfig<TypographyComponentProps>({
   // avoid forwarding styled-system's props to dom
   shouldForwardProp
-}).attrs<TypographyComponentProps>(({ theme, variant = "HERO", bold, as, ...other }) => {
+}).attrs<TypographyComponentProps>(({ theme, variant = "CTA", bold, as, ...other }) => {
   return ({
-    ...theme.typographyStyles?.variants?.[variant],
+    ...theme.typographyStyles?.variants?.[variant || "HERO"],
     ...other,
     style: { fontWeight: bold ? "bold" : undefined }
   });
