@@ -9,7 +9,7 @@ export const textInputTheme: ThemedComponentWithVariants<TextInputProps, TextInp
       border: "1px solid black",
       fontSize: 16,
       color: "black",
-      fontFamily: "regular"
+      fontFamily: "black"
     },
     secondary: {
       fontSize: 16,

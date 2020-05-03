@@ -7,6 +7,11 @@ export type ButtonVariants = "primary" | "secondary"
 export const buttonTheme: ThemedComponentWithVariants<ButtonProps, ButtonVariants> = {
   // border: "redThin",
   // height: { default: "HEADER_DESKTOP", tablet: "HEADER_DESKTOP" },
+  borderRadius: 20,
+  px: 20,
+  py: 3,
+  alignContent: "center",
+  justifyContent: "center",
   variants: {
     primary: {
       color: "white",
@@ -14,7 +19,7 @@ export const buttonTheme: ThemedComponentWithVariants<ButtonProps, ButtonVariant
       alignContent: "center",
       justifyContent: "center",
       textStyle: {
-        textAlign: "center",
+        variant: "regular",
         color: "white"
       },
       // bg: "error",

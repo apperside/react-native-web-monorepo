@@ -5,7 +5,7 @@ import { TypographyComponentProps } from ".";
 
 // eslint-disable-next-line max-len
 // const variants = (theme: DefaultTheme): { variants: TypographyVariantsConfig } => ({ variants: theme.typography.variants });
-export const Text = styled.div.withConfig<TypographyComponentProps>({
+const Text = styled.div.withConfig<TypographyComponentProps>({
   // avoid forwarding styled-system's props to dom
   shouldForwardProp
 })<TypographyComponentProps>(
@@ -31,3 +31,4 @@ export const Text = styled.div.withConfig<TypographyComponentProps>({
 Text.defaultProps = {
   variant: "HERO"
 };
+export default Text;

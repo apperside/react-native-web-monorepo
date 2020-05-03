@@ -1,10 +1,14 @@
 import shouldForwardProp from "@styled-system/should-forward-prop";
 import styled from "styled-components/native";
-import { background, borderRadius, variant, color, border, fontFamily, fontSize, fontStyle, fontWeight, letterSpacing, lineHeight, size, space, textAlign, textStyle, width } from "styled-system";
-import { TypographyComponentProps } from "../typography";
+import { background, borderRadius, variant, layout, flexbox, color, fontFamily, fontSize, fontStyle, fontWeight, letterSpacing, lineHeight, size, space, textAlign, textStyle, width } from "styled-system";
 import { TextInputProps } from ".";
 
-export const TextSpecs = styled.TextInput<TextInputProps>(
+// eslint-disable-next-line max-len
+// const variants = (theme: DefaultTheme): { variants: TypographyVariantsConfig } => ({ variants: theme.typography.variants });
+export const TextInput = styled.TextInput.withConfig<TextInputProps>({
+  // avoid forwarding styled-system's props to dom
+  shouldForwardProp
+})<TextInputProps>(
   space,
   fontSize,
   fontStyle,
@@ -18,22 +22,10 @@ export const TextSpecs = styled.TextInput<TextInputProps>(
   lineHeight,
   textAlign,
   background,
-  border,
+  flexbox,
+  layout,
   width,
   props => variant({
     variants: props.theme.textInput.variants
   })
 );
-
-export const TextInput = styled(TextSpecs).withConfig<TextInputProps>({
-  // avoid forwarding styled-system's props to dom
-  shouldForwardProp
-}).attrs<TextInputProps>(({ theme, variant, bold, as, ...other }) => {
-  console.log("variant is", theme.typographyStyles?.variants?.[variant || "primary"]);
-  return ({
-    ...theme.textInput,
-    ...other,
-    style: { fontWeight: bold ? "bold" : undefined }
-  });
-})<TextInputProps>(({ theme }) => ({
-}));

@@ -1,9 +1,9 @@
-import { ThemedComponentWithVariants, VariantsProps } from "@apperside/ui-engine/src/theme";
-import { BackgroundImageProps, BorderRadiusProps, ColorProps, FontFamilyProps, SpaceProps, TextStyleProps, ThemeFontFamilies, ThemeFontSizes, TypographyProps as SSTypographyProps, WidthProps } from "styled-system";
-export declare type TypographyVariants = "HERO" | "H1" | "H2" | "H3" | "H4" | "P0" | "P1" | "P2" | "P3" | "MENU" | "FOOTER" | "CTA";
-export declare type TypographyComponentProps = SSTypographyProps & SpaceProps & WidthProps & ColorProps & BackgroundImageProps & TextStyleProps & FontFamilyProps & BorderRadiusProps & FontFamilyProps & {
+import { ThemedComponentWithVariants } from "@apperside/ui-engine/src/theme";
+import { BackgroundImageProps, BorderRadiusProps, FlexboxProps, ColorProps, FontFamilyProps, SpaceProps, TextStyleProps, ThemeFontFamilies, ThemeFontSizes, TypographyProps as SSTypographyProps, WidthProps } from "styled-system";
+import Text from "./TypographyComponent";
+export declare type TypographyVariants = "regular" | "medium" | "bold" | "black" | "extended";
+export declare type TypographyComponentProps = SSTypographyProps & SpaceProps & WidthProps & ColorProps & BackgroundImageProps & TextStyleProps & FontFamilyProps & BorderRadiusProps & FontFamilyProps & FlexboxProps & {
     bold?: boolean;
-    as?: any;
     variant?: TypographyVariants;
 };
 export interface CustomComponentsTheme {
@@ -11,9 +11,11 @@ export interface CustomComponentsTheme {
 }
 declare module "styled-system" {
     interface ThemeFontFamilies {
-        heading: string;
-        body: string;
+        regular: string;
+        medium: string;
         bold: string;
+        black: string;
+        extended: string;
     }
     interface ThemeFontSizes {
         small: string;
@@ -24,5 +26,4 @@ declare module "styled-system" {
 }
 export declare const fontFamilies: ThemeFontFamilies;
 export declare const fontSizeMap: ThemeFontSizes;
-export declare const typographyVariants: VariantsProps<TypographyComponentProps, TypographyVariants>;
-export { Text } from "./TypographyComponent";
+export default Text;

@@ -1,18 +1,14 @@
 import { ThemedComponentWithVariants, VariantsProps } from "@apperside/ui-engine/src/theme";
-import { BackgroundImageProps, BorderRadiusProps, ColorProps, FontFamilyProps, SpaceProps, TextStyleProps, ThemeFontFamilies, ThemeFontSizes, TypographyProps as SSTypographyProps, WidthProps } from "styled-system";
+import { BackgroundImageProps, BorderRadiusProps, FlexboxProps, ColorProps, FontFamilyProps, SpaceProps, TextStyleProps, ThemeFontFamilies, ThemeFontSizes, TypographyProps as SSTypographyProps, WidthProps } from "styled-system";
 
-export type TypographyVariants = "HERO" |
-  "H1" |
-  "H2" |
-  "H3" |
-  "H4" |
-  "P0" |
-  "P1" |
-  "P2" |
-  "P3" |
-  "MENU" |
-  "FOOTER" |
-  "CTA";
+import Text from "./TypographyComponent";
+
+export type TypographyVariants =
+  "regular" |
+  "medium" |
+  "bold" |
+  "black" |
+  "extended";
 
 export type TypographyComponentProps =
   & SSTypographyProps
@@ -24,11 +20,11 @@ export type TypographyComponentProps =
   & FontFamilyProps
   & BorderRadiusProps
   & FontFamilyProps
+  & FlexboxProps
   & {
     // utility prop to apply bold fontWeight
     bold?: boolean,
     // TODO: allow only valid html tag names
-    as?: any
     variant?: TypographyVariants
   }
 
@@ -70,4 +66,8 @@ export const fontSizeMap: ThemeFontSizes = {
   "1.1rem": "1.1rem"
 };
 
-export { Text } from "./TypographyComponent";
+Text.defaultProps = {
+  variant: "regular"
+};
+
+export default Text;

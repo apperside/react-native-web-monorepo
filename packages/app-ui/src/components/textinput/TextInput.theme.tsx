@@ -4,12 +4,14 @@ import { TextInputVariants, TextInputProps } from ".";
 
 export const textInputTheme: ThemedComponentWithVariants<TextInputProps, TextInputVariants> = {
   border: "1px solid black",
+  color: "black",
+  minWidth: 50,
   variants: {
     primary: {
       border: "1px solid black",
       fontSize: 16,
       color: "black",
-      fontFamily: "regular"
+      fontFamily: "black"
     },
     secondary: {
       fontSize: 16,

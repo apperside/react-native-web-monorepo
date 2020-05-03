@@ -3,29 +3,29 @@ import { ThemedComponentWithVariants } from "@apperside/ui-engine/src/theme";
 import { TypographyComponentProps, TypographyVariants } from ".";
 export const typographyTheme: ThemedComponentWithVariants<TypographyComponentProps, TypographyVariants> = {
   variants: {
-    HERO: {
+    regular: {
       fontSize: {
         default: 10,
         tablet: 20,
         desktop: 30
       },
-      color: "red",
-      fontWeight: "bold",
-      fontFamily: "extended",
+      // color: "red",
+      // fontWeight: "bold",
+      fontFamily: "regular",
       lineHeight: {
         default: 1.36,
         tablet: 1.44,
         desktop: 1.44
       }
     },
-    H1: {
+    black: {
       fontSize: {
         default: 20,
         tablet: 24,
         desktop: 24
       },
       color: "white",
-      fontWeight: "bold",
+      // fontWeight: "bold",
       fontFamily: "black",
       lineHeight: {
         default: 1.3,
@@ -33,91 +33,33 @@ export const typographyTheme: ThemedComponentWithVariants<TypographyComponentPro
         desktop: 1.33
       }
     },
-    H2: {
+    bold: {
       fontSize: {
         default: 16,
         tablet: 24,
         desktop: 20
       },
-      fontWeight: 700,
-      fontFamily: "black",
+      // fontWeight: 700,
+      fontFamily: "bold",
       lineHeight: {
         default: 1.38,
         tablet: 1.2,
         desktop: 1.2
       }
     },
-    H3: {
+    extended: {
       fontSize: 18,
       fontWeight: 700,
-      color: "primary",
-      fontFamily: "black",
+      // color: "primary",
+      fontFamily: "extended",
       lineHeight: 1.33
     },
-    H4: {
+    medium: {
       fontSize: 16,
       fontWeight: 700,
       color: "primary",
-      fontFamily: "black",
-      lineHeight: 1.33
-    },
-    P0: {
-      fontSize: {
-        default: 18,
-        tablet: 40,
-        desktop: 40
-      },
-      fontFamily: "extended",
-      lineHeight: 1.25
-    },
-    P1: {
-      fontSize: {
-        default: 18,
-        tablet: 22,
-        desktop: 22
-      },
-      fontFamily: "extended",
-      lineHeight: 1.36
-    },
-    P2: {
-      fontSize: {
-        default: 14,
-        tablet: 18,
-        desktop: 18
-      },
-      fontFamily: "extended",
-      lineHeight: 1.33
-    },
-    P3: {
-      fontSize: 14,
-      fontWeight: 300,
-      fontFamily: "extended",
-      lineHeight: 1.29
-    },
-    MENU: {
-      fontSize: {
-        default: 12,
-        tablet: 14,
-        desktop: 14
-      },
-      fontFamily: "medium",
-      lineHeight: 1.71
-    },
-    FOOTER: {
-      fontWeight: 700,
-      color: "footer",
-      fontSize: {
-        default: 14,
-        tablet: 18
-      },
       fontFamily: "medium",
       lineHeight: 1.33
-    },
-    CTA: {
-      color: "black",
-      fontSize: 14,
-      fontFamily: "medium",
-      lineHeight: 1.71
     }
   }
 };
