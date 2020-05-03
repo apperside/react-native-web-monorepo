@@ -3,14 +3,19 @@
   "version": "0.0.1",
   "private": true,
   "dependencies": {
+    "@apperside/app-ui": "0.0.1",
+    "@apperside/commons": "0.0.1",
+    "@reduxjs/toolkit": "^1.3.5",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-scripts": "3.4.1",
-    "@apperside/app-ui": "0.0.1"
+    "react-redux": "^7.2.0",
+    "react-scripts": "3.4.1"
   },
   "devDependencies": {
+    "babel-plugin-react-native-web": "0.12.1",
     "react-app-rewired": "2.1.5",
-    "babel-plugin-react-native-web": "0.12.1"
+    "@types/react-redux": "^7.1.7",
+    "@types/redux": "^3.6.0"
   },
   "scripts": {
     "start": "react-app-rewired start",

@@ -16,12 +16,11 @@
     "**/*.ts",
     "**/*.tsx",
     "**/*.theme.tsx",
-    "**/*.png",
-    "../../packages/app-ui"
+    "**/*.png"
   ],
   "references": [
     {
-      "path": "../../packages/app-ui"
-    }
+      "path": "../../packages/commons"
+    },
   ]
 }

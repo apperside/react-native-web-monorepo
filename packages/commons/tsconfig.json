@@ -11,21 +11,12 @@
     "suppressImplicitAnyIndexErrors": true,
     "typeRoots": [
       "@types",
-      "../../typings",
+      "typings"
     ]
   },
   "include": [
     "src",
-    "**/*.ts",
-    "**/*.tsx",
-    "**/*.theme.tsx",
-    "**/*.png",
-    "../../typings",
-    "../ui-engine/typings",
+    "typings",
+    "../../typings"
   ],
-  "references": [
-    {
-      "path": "../ui-engine"
-    },
-  ]
 }

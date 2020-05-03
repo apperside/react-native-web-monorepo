@@ -12,10 +12,11 @@
     "compile": "tsc -b --incremental",
     "clean": "rm -rf $(mdfind -onlyin . -name node_modules)",
     "android": "yarn workspace app android",
-    "ios": "yarn workspace TaxiApp ios",
+    "ios": "yarn workspace app ios",
+    "rnp": "yarn workspace app start",
     "web": "yarn workspace web start",
-    "studio": "yarn workspace TaxiApp studio",
-    "xcode": "yarn workspace TaxiApp xcode"
+    "studio": "yarn workspace app studio",
+    "xcode": "yarn workspace app xcode"
   },
   "dependencies": {
     "@styled-system/should-forward-prop": "^5.1.5",
@@ -37,6 +38,6 @@
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-react": "^7.19.0",
     "eslint-plugin-standard": "^4.0.1",
-    "typescript": "3.7.5"
+    "typescript": "3.8.3"
   }
 }

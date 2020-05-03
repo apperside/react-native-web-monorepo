@@ -1,7 +1,17 @@
 {
-  "name": "workspace-a",
-  "version": "1.0.0",
+  "name": "@apperside/commons",
+  "version": "0.0.1",
+  "scripts": {
+    "build": "tsc -b --incremental"
+  },
   "dependencies": {
-    "cross-env": "7.0.2"
+    "@types/redux-thunk": "^2.1.0",
+    "@types/reselect": "^2.2.0",
+    "cross-env": "7.0.2",
+    "react-redux": "^7.2.0",
+    "redux": "^4.0.5",
+    "redux-thunk": "^2.3.0",
+    "reselect": "^4.0.0",
+    "typesafe-actions": "^5.1.0"
   }
 }
