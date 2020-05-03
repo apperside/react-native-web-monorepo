@@ -1,9 +1,10 @@
 import { App as AppContainer } from "@apperside/app-ui/src";
-import ExamplePage from "@apperside/app-ui/src/components/ExamplePage";
+// import ExamplePage from "@apperside/app-ui/src/components/ExamplePage";
 import combinedReducers from "@apperside/commons/src/redux";
 import { configureStore } from "@reduxjs/toolkit";
 import React from "react";
 import { Provider } from "react-redux";
+import AppContent from "./AppContent";
 
 const App: React.FC<{}> = props => {
   const store = configureStore({
@@ -12,7 +13,7 @@ const App: React.FC<{}> = props => {
 
   return <AppContainer>
     <Provider store={store}>
-      <ExamplePage />
+      <AppContent />
     </Provider>
   </AppContainer>;
 };

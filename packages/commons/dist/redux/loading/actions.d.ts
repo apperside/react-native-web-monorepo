@@ -1,16 +1,15 @@
-import { AppDispatch, AppState } from "..";
-export declare type LoadingAction = {
+export declare const showLoading: (load?: boolean | undefined, loadingMessage?: string | undefined) => {
     type: "SHOW_LOADING";
     payload: {
-        load?: boolean;
-        loadingMessage?: string;
-    };
-} | {
-    type: "SHOW_LOADING2";
-    payload: {
-        load?: boolean;
-        loadingMessage?: string;
+        load: boolean | undefined;
+        loadingMessage: string | undefined;
     };
 };
-export declare const showLoading: (load?: boolean | undefined, loadingMessage?: string | undefined) => LoadingAction;
-export declare function loginAction(): (dispatch: AppDispatch, getState: () => AppState) => Promise<void>;
+export declare const hideLoading: () => {
+    type: "SHOW_LOADING";
+    payload: {
+        load: boolean;
+        loadingMessage: undefined;
+    };
+};
+export declare type LoadingAction = ReturnType<typeof showLoading> | ReturnType<typeof hideLoading>;

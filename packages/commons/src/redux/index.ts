@@ -5,6 +5,7 @@ import { ThunkAction, ThunkDispatch } from "redux-thunk";
 // import * as cart from "./cart";
 // import * as checkout from "./checkout";
 import * as loading from "./loading";
+export * from "./loading";
 // import * as modal from "./modal";
 // import * as order from "./order";
 // import * as paypal from "./paypal";

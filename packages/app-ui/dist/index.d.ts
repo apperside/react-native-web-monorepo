@@ -7,6 +7,7 @@ import { ButtonProps } from "./components/button";
 import { ButtonVariants } from "./components/button/Button.theme";
 import { TextInputProps, TextInputVariants } from "./components/textinput";
 import { TypographyComponentProps as MYTypographyProps, TypographyVariants } from "./components/typography";
+export * from "./components";
 export { Col, Grid, Row };
 declare module "styled-components" {
     interface DefaultTheme extends Theme {

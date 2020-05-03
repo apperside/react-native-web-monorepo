@@ -7,10 +7,10 @@ export declare type StatefulData<T> = {
     message?: string;
 };
 export declare type AppState = {
-    loading: loading.LoadingReducer.LoadingState;
+    loading: loading.LoadingState;
 };
 export declare function uuidv4(): string;
-export declare type AppAction = loading.LoadingActions.LoadingAction;
+export declare type AppAction = loading.LoadingAction;
 declare const combinedReducers: import("redux").Reducer<import("redux").CombinedState<AppState>, import("redux").AnyAction>;
 export declare const appInitialState: AppState;
 export default combinedReducers;

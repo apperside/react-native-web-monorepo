@@ -2,7 +2,8 @@
   "name": "@apperside/commons",
   "version": "0.0.1",
   "scripts": {
-    "build": "tsc -b --incremental"
+    "build": "tsc -b --incremental",
+    "watch": "tsc -b --incremental --watch"
   },
   "dependencies": {
     "@types/redux-thunk": "^2.1.0",

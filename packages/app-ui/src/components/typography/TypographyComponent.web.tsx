@@ -29,6 +29,6 @@ const Text = styled.div.withConfig<TypographyComponentProps>({
 );
 // @ts-ignore
 Text.defaultProps = {
-  variant: "HERO"
+  variant: "regular"
 };
 export default Text;

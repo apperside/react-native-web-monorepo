@@ -1,9 +1,11 @@
 {
   "name": "@apperside/app-ui",
   "version": "0.0.1",
-  "main": "./src/index",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
-    "build": "tsc -b --incremental"
+    "build": "tsc -b --incremental",
+    "watch": "tsc -b --incremental --watch"
   },
   "dependencies": {
     "@apperside/ui-engine": "0.0.1",

@@ -1,54 +1,170 @@
-# React Native [Web] + Monorepo
-## 100% code sharing between Web, iOS and Android
+# React Monorepo
 
-This is the source code from [this tutorial](https://dev.to/brunolemos/tutorial-100-code-sharing-between-ios-android--web-using-react-native-web-andmonorepo-4pej).
+This is a sample project illustrating the structure of a project using react, react-native, styled-components, styled-system with yarn workspaces
 
-![article-cover](https://user-images.githubusercontent.com/619186/64933790-1fc27680-d81d-11e9-8077-64a1066b7c17.png)
+**GOALS**
+- Efficiently build, manage and mantain a design system
+- Maximize code sharing across react and react-native
+- Cross module logic sharing
 
+**MODULES**
+- apps
+	- app
+	- web
+- packages
+	- app-ui
+	- ui-engine
+	- commons
 
-### How to run
-
-_Requirements: [React Native](https://facebook.github.io/react-native/docs/getting-started.html#native) (last tested on react-native@0.61)_
-
-  - `$ git clone git@github.com:brunolemos/react-native-web-monorepo.git`
-  - `$ cd react-native-web-monorepo`
-  - `$ yarn`
-  - `$ cd packages/mobile/ios`
-  - `$ pod install`
-  - `$ cd -`
-  - `$ yarn workspace web start`
-  - `$ yarn workspace mobile start`
-  - Run the project
-    - [iOS] Via Xcode
-      - `yarn xcode` (open the project on Xcode)
-      - Press the Run button
-    - [Android] Via Android Studio
-      - `yarn studio` (open the project on Android Studio)
-      - Press the Run button
-    - Via CLI
-      - _You may need to launch your device emulator before the next command_
-      - `$ yarn android` or  `$ yarn ios`
-
-### Author
-
-Follow me on Twitter: [@brunolemos](https://twitter.com/brunolemos)<br/>
-
-<a href="https://twitter.com/brunolemos" target="_blank"><img src="https://github.com/brunolemos.png?size=100" height="100" /></a>
+**apps/app**: the mobile app
+**apps/web**: the web app
+**packages/app-ui**: all the shared ui components
+**pacakges/ui-engine**: the module at the core of the implementation
+**packages/commons**: logic related code (redux.selectors,api call ecc)
 
 
-## Who is using this on production
+# APP
 
-Check out [DevHub](https://github.com/devhubapp/devhub).
-The main difference is that it supports Desktop (Electron) in addition to Web, iOS and Android.
+This is a classical react-native app. It just has a customized version of `metro.config.js` file to handle the monorepo structure
 
-![DevHub Desktop](https://user-images.githubusercontent.com/619186/63945240-59d40000-ca49-11e9-98c1-353225f8dcf6.jpg)
+# WEB
 
-![DevHub Menubar](https://github.com/devhubapp/devhub/raw/master/landing/static/screenshots/devhub-desktop-menubar-banner.jpg)
+This a classic CRA application, plugged with `react-native-web` and `react-app-rewired`.
 
-<p align="center">
-  <img alt="DevHub Mobile - Notifications" height="620" src="https://github.com/devhubapp/devhub/raw/master/landing/static/screenshots/iphone-notifications-dark.jpg" />
-  <img alt="DevHub Mobile - Notification Filters" height="620" src="https://github.com/devhubapp/devhub/raw/master/landing/static/screenshots/iphone-notifications-filters-dark.jpg" />
-  <img alt="DevHub Mobile - Events" height="620" src="https://github.com/devhubapp/devhub/raw/master/landing/static/screenshots/iphone-events-dark.jpg" />
-</p>
+Although we use react-native-web, it is not being used to share components, but rather to take advantage of [react-native file naming for platform specific code](https://reactnative.dev/docs/platform-specific-code#native-specific-extensions-ie-sharing-code-with-nodejs-and-web). 
 
-<br/>
+The reason why the components are not totally shared is because using `View` instead of `div` breaks styled-system responsive properties. Once this problem will be fixed we can totally share the code. 
+
+# UI-ENGINE
+This is the pacakge where all the design related code is located.
+
+## Switch to another file
+
+All your files and folders are presented as a tree in the file explorer. You can switch from one to another by clicking a file in the tree.
+
+## Rename a file
+
+You can rename the current file by clicking the file name in the navigation bar or by clicking the **Rename** button in the file explorer.
+
+## Delete a file
+
+You can delete the current file by clicking the **Remove** button in the file explorer. The file will be moved into the **Trash** folder and automatically deleted after 7 days of inactivity.
+
+## Export a file
+
+You can export the current file by clicking **Export to disk** in the menu. You can choose to export the file as plain Markdown, as HTML using a Handlebars template or as a PDF.
+
+
+# Synchronization
+
+Synchronization is one of the biggest features of StackEdit. It enables you to synchronize any file in your workspace with other files stored in your **Google Drive**, your **Dropbox** and your **GitHub** accounts. This allows you to keep writing on other devices, collaborate with people you share the file with, integrate easily into your workflow... The synchronization mechanism takes place every minute in the background, downloading, merging, and uploading file modifications.
+
+There are two types of synchronization and they can complement each other:
+
+- The workspace synchronization will sync all your files, folders and settings automatically. This will allow you to fetch your workspace on any other device.
+	> To start syncing your workspace, just sign in with Google in the menu.
+
+- The file synchronization will keep one file of the workspace synced with one or multiple files in **Google Drive**, **Dropbox** or **GitHub**.
+	> Before starting to sync files, you must link an account in the **Synchronize** sub-menu.
+
+## Open a file
+
+You can open a file from **Google Drive**, **Dropbox** or **GitHub** by opening the **Synchronize** sub-menu and clicking **Open from**. Once opened in the workspace, any modification in the file will be automatically synced.
+
+## Save a file
+
+You can save any file of the workspace to **Google Drive**, **Dropbox** or **GitHub** by opening the **Synchronize** sub-menu and clicking **Save on**. Even if a file in the workspace is already synced, you can save it to another location. StackEdit can sync one file with multiple locations and accounts.
+
+## Synchronize a file
+
+Once your file is linked to a synchronized location, StackEdit will periodically synchronize it by downloading/uploading any modification. A merge will be performed if necessary and conflicts will be resolved.
+
+If you just have modified your file and you want to force syncing, click the **Synchronize now** button in the navigation bar.
+
+> **Note:** The **Synchronize now** button is disabled if you have no file to synchronize.
+
+## Manage file synchronization
+
+Since one file can be synced with multiple locations, you can list and manage synchronized locations by clicking **File synchronization** in the **Synchronize** sub-menu. This allows you to list and remove synchronized locations that are linked to your file.
+
+
+# Publication
+
+Publishing in StackEdit makes it simple for you to publish online your files. Once you're happy with a file, you can publish it to different hosting platforms like **Blogger**, **Dropbox**, **Gist**, **GitHub**, **Google Drive**, **WordPress** and **Zendesk**. With [Handlebars templates](http://handlebarsjs.com/), you have full control over what you export.
+
+> Before starting to publish, you must link an account in the **Publish** sub-menu.
+
+## Publish a File
+
+You can publish your file by opening the **Publish** sub-menu and by clicking **Publish to**. For some locations, you can choose between the following formats:
+
+- Markdown: publish the Markdown text on a website that can interpret it (**GitHub** for instance),
+- HTML: publish the file converted to HTML via a Handlebars template (on a blog for example).
+
+## Update a publication
+
+After publishing, StackEdit keeps your file linked to that publication which makes it easy for you to re-publish it. Once you have modified your file and you want to update your publication, click on the **Publish now** button in the navigation bar.
+
+> **Note:** The **Publish now** button is disabled if your file has not been published yet.
+
+## Manage file publication
+
+Since one file can be published to multiple locations, you can list and manage publish locations by clicking **File publication** in the **Publish** sub-menu. This allows you to list and remove publication locations that are linked to your file.
+
+
+# Markdown extensions
+
+StackEdit extends the standard Markdown syntax by adding extra **Markdown extensions**, providing you with some nice features.
+
+> **ProTip:** You can disable any **Markdown extension** in the **File properties** dialog.
+
+
+## SmartyPants
+
+SmartyPants converts ASCII punctuation characters into "smart" typographic punctuation HTML entities. For example:
+
+|                |ASCII                          |HTML                         |
+|----------------|-------------------------------|-----------------------------|
+|Single backticks|`'Isn't this fun?'`            |'Isn't this fun?'            |
+|Quotes          |`"Isn't this fun?"`            |"Isn't this fun?"            |
+|Dashes          |`-- is en-dash, --- is em-dash`|-- is en-dash, --- is em-dash|
+
+
+## KaTeX
+
+You can render LaTeX mathematical expressions using [KaTeX](https://khan.github.io/KaTeX/):
+
+The *Gamma function* satisfying $\Gamma(n) = (n-1)!\quad\forall n\in\mathbb N$ is via the Euler integral
+
+$$
+\Gamma(z) = \int_0^\infty t^{z-1}e^{-t}dt\,.
+$$
+
+> You can find more information about **LaTeX** mathematical expressions [here](http://meta.math.stackexchange.com/questions/5020/mathjax-basic-tutorial-and-quick-reference).
+
+
+## UML diagrams
+
+You can render UML diagrams using [Mermaid](https://mermaidjs.github.io/). For example, this will produce a sequence diagram:
+
+```mermaid
+sequenceDiagram
+Alice ->> Bob: Hello Bob, how are you?
+Bob-->>John: How about you John?
+Bob--x Alice: I am good thanks!
+Bob-x John: I am good thanks!
+Note right of John: Bob thinks a long<br/>long time, so long<br/>that the text does<br/>not fit on a row.
+
+Bob-->Alice: Checking with John...
+Alice->John: Yes... John, how are you?
+```
+
+And this will produce a flow chart:
+
+```mermaid
+graph LR
+A[Square Rect] -- Link text --> B((Circle))
+A --> C(Round Rect)
+B --> D{Rhombus}
+C --> D
+```

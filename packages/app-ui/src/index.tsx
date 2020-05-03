@@ -17,6 +17,7 @@ import { themeColors } from "./styleguide/colors";
 import { sizesMap } from "./styleguide/sizes";
 import { spacesMap } from "./styleguide/spaces";
 
+// export * from "./components";
 export { Col, Grid, Row };
 // type PropsWithVariant<T> = { variant?: T }
 

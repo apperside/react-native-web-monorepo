@@ -1,3 +1,4 @@
-export * as LoadingActions from "./actions";
-export * as LoadingReducer from "./reducer";
+export * from "./actions";
+export * from "./reducer";
+export * from "./sideffects";
 export { initialState } from "./reducer";
