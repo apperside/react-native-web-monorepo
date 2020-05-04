@@ -10,11 +10,5 @@ export const Row = styled.div.withConfig<RowProps>({ shouldForwardProp })<RowPro
   borderColor,
   borderWidth,
   flex,
-  space,
-  {
-    display: "flex",
-    flexDirection: "row",
-    width: "100%",
-    flexWrap: "wrap"
-  }
+  space
 );

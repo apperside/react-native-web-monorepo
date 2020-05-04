@@ -4,7 +4,7 @@ import combinedReducers from "@apperside/commons/src/redux";
 import { configureStore } from "@reduxjs/toolkit";
 import React from "react";
 import { Provider } from "react-redux";
-
+import AppContent from "./AppContent";
 const App: React.FC = () => {
   const store = configureStore({
     reducer: combinedReducers

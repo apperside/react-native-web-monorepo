@@ -5,11 +5,11 @@ import { buildTheme, ThemeSpecs } from "@apperside/ui-engine/src/theme/ThemeProv
 import React from "react";
 import { DefaultTheme } from "styled-components";
 import { Theme } from "styled-system";
-import { ButtonProps } from "./components/button";
+import { ButtonStyleProps } from "./components/button";
 import { buttonTheme, ButtonVariants } from "./components/button/Button.theme";
-import { TextInputProps, TextInputVariants } from "./components/textinput";
+import { TextInputStyleProps, TextInputVariants } from "./components/textinput";
 import { textInputTheme } from "./components/textinput/TextInput.theme";
-import { fontFamilies, fontSizeMap, TypographyComponentProps as MYTypographyProps, TypographyVariants } from "./components/typography";
+import { fontFamilies, fontSizeMap, TypographyComponentStyleProps as MYTypographyProps, TypographyVariants } from "./components/typography";
 import { typographyTheme } from "./components/typography/Typography.theme";
 import { themeBordersMap, themeBorderWidthsMap } from "./styleguide/borders";
 import { breakpointsMap } from "./styleguide/breakpoints";
@@ -17,16 +17,13 @@ import { themeColors } from "./styleguide/colors";
 import { sizesMap } from "./styleguide/sizes";
 import { spacesMap } from "./styleguide/spaces";
 
-// export * from "./components";
 export { Col, Grid, Row };
-// type PropsWithVariant<T> = { variant?: T }
 
-// export { PropsWithVariant };
 declare module "styled-components" {
   export interface DefaultTheme extends Theme {
     typographyStyles: ThemedComponentWithVariants<MYTypographyProps, TypographyVariants>
-    textInput: ThemedComponentWithVariants<TextInputProps, TextInputVariants>
-    button: ThemedComponentWithVariants<ButtonProps, ButtonVariants>
+    textInput: ThemedComponentWithVariants<TextInputStyleProps, TextInputVariants>
+    button: ThemedComponentWithVariants<ButtonStyleProps, ButtonVariants>
 
   }
 }

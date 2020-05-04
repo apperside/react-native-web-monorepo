@@ -1,17 +1,20 @@
 
 import { ThemedComponentWithVariants } from "@apperside/ui-engine/src/theme";
-import { TextInputVariants, TextInputProps } from ".";
+import { TextInputVariants, TextInputStyleProps } from ".";
 
-export const textInputTheme: ThemedComponentWithVariants<TextInputProps, TextInputVariants> = {
+export const textInputTheme: ThemedComponentWithVariants<TextInputStyleProps, TextInputVariants> = {
   border: "1px solid black",
   color: "black",
   minWidth: 50,
+  px: 15,
+  borderRadius: 5,
   variants: {
     primary: {
-      border: "1px solid black",
+      border: "1px solid #E6E6E6",
+
       fontSize: 16,
       color: "black",
-      fontFamily: "black"
+      fontFamily: "regular"
     },
     secondary: {
       fontSize: 16,

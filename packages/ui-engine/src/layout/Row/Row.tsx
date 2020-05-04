@@ -9,11 +9,5 @@ export const Row = styled.View.withConfig<RowProps>({ shouldForwardProp })<RowPr
   flexbox,
   borders,
   flex,
-  space,
-  {
-    display: "flex",
-    flexDirection: "row",
-    width: "100%",
-    flexWrap: "wrap"
-  }
+  space
 );

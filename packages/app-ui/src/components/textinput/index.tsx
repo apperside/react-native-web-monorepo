@@ -4,7 +4,7 @@ import { TextInput } from "./TextInput";
 
 export type TextInputVariants = "primary" | "secondary"
 
-export type TextInputProps =
+export type TextInputStyleProps =
   & SSTypographyProps
   & SpaceProps
   & WidthProps

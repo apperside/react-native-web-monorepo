@@ -1,5 +1,5 @@
 import { App as AppContainer } from "@apperside/app-ui/src";
-// import ExamplePage from "@apperside/app-ui/src/components/ExamplePage";
+import ExamplePage from "@apperside/app-ui/src/components/ExamplePage";
 import combinedReducers from "@apperside/commons/src/redux";
 import { configureStore } from "@reduxjs/toolkit";
 import React from "react";
@@ -13,7 +13,7 @@ const App: React.FC<{}> = props => {
 
   return <AppContainer>
     <Provider store={store}>
-      <AppContent />
+      <ExamplePage />
     </Provider>
   </AppContainer>;
 };

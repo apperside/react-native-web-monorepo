@@ -1,10 +1,10 @@
 
 import { ThemedComponentWithVariants } from "@apperside/ui-engine/src/theme";
-import { ButtonProps } from ".";
+import { ButtonStyleProps } from ".";
 
 export type ButtonVariants = "primary" | "secondary"
 
-export const buttonTheme: ThemedComponentWithVariants<ButtonProps, ButtonVariants> = {
+export const buttonTheme: ThemedComponentWithVariants<ButtonStyleProps, ButtonVariants> = {
   // border: "redThin",
   // height: { default: "HEADER_DESKTOP", tablet: "HEADER_DESKTOP" },
   borderRadius: 20,

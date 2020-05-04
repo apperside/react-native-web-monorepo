@@ -33,7 +33,7 @@ const AppContent: React.FC = () => {
       {!!isLoading &&
         <Text>CARICAMENTO</Text>
       }
-      <Button onPress={onClick} >CLICCAMI</Button>
+      <Button onClick={onClick} >CLICK ME</Button>
     </VFlexBox>
 
   );

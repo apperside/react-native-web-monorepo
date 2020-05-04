@@ -1,12 +1,12 @@
 import shouldForwardProp from "@styled-system/should-forward-prop";
 import styled from "styled-components";
 import { background, borderRadius, layout, variant, color, fontFamily, fontSize, fontStyle, fontWeight, letterSpacing, lineHeight, size, space, textAlign, textStyle, width } from "styled-system";
-import { TextInputProps } from ".";
+import { TextInputStyleProps } from ".";
 
-export const TextInput = styled.input.withConfig<TextInputProps>({
+export const TextInput = styled.input.withConfig<TextInputStyleProps>({
   // avoid forwarding styled-system's props to dom
   shouldForwardProp
-})<TextInputProps>(
+})<TextInputStyleProps>(
   space,
   fontSize,
   fontStyle,

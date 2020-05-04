@@ -20,8 +20,7 @@ export type ThemedComponentWithVariants<Props, Variants extends string> =
 declare module "styled-components" {
 
   export interface CustomComponentsTheme {
-    // typography?: { [key in TypographyVariants]: TypographyProps }
-    // button?: ButtonProps
+    // to be extended
   }
 
   export interface DefaultTheme extends Theme, CustomComponentsTheme {
@@ -41,26 +40,9 @@ declare module "styled-components" {
     buttons?: ObjectOrArray<CSS.StandardProperties>;
     colorStyles?: ObjectOrArray<CSS.StandardProperties>;
     textStyles?: ObjectOrArray<CSS.StandardProperties>;
-    // breakpoints: ThemeBreakpoints,
-    // fontSizes: ThemeFontSizes,
     disableStyledSystemCache?: boolean,
 
   }
 }
 
 export type PropsWithVariant<T> = { variant?: T }
-
-// const defaultTheme: DefaultTheme = {
-//   space,
-//   breakpoints,
-//   fontSizes,
-//   fonts,
-//   sizes,
-//   borderWidths,
-//   borders,
-//   colors: themeColors,
-//   disableStyledSystemCache: true
-
-// };
-
-// export { defaultTheme };

@@ -1,14 +1,14 @@
 import shouldForwardProp from "@styled-system/should-forward-prop";
 import styled from "styled-components";
 import { background, borderRadius, variant, color, fontFamily, fontSize, fontStyle, fontWeight, letterSpacing, lineHeight, size, space, textAlign, textStyle, width } from "styled-system";
-import { TypographyComponentProps } from ".";
+import { TypographyComponentStyleProps } from ".";
 
 // eslint-disable-next-line max-len
 // const variants = (theme: DefaultTheme): { variants: TypographyVariantsConfig } => ({ variants: theme.typography.variants });
-const Text = styled.div.withConfig<TypographyComponentProps>({
+const Text = styled.div.withConfig<TypographyComponentStyleProps>({
   // avoid forwarding styled-system's props to dom
   shouldForwardProp
-})<TypographyComponentProps>(
+})<TypographyComponentStyleProps>(
   space,
   fontSize,
   fontStyle,

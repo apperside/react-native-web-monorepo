@@ -1,6 +1,14 @@
 import { LayoutProps, FlexboxProps, BordersProps, SpaceProps } from "styled-system";
 
-export { Row } from "./Row";
+import { Box } from "../Box";
 
-export type RowProps = LayoutProps & FlexboxProps & BordersProps
-  & SpaceProps;
+const Row = Box;
+
+Row.defaultProps = {
+  display: "flex",
+  flexDirection: "row",
+  width: "100%",
+  flexWrap: "wrap"
+};
+
+export { Row };

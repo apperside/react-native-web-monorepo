@@ -1,12 +1,12 @@
 import shouldForwardProp from "@styled-system/should-forward-prop";
 import styled from "styled-components/native";
 import { background, borderRadius, variant, flexbox, color, fontFamily, fontSize, fontStyle, fontWeight, letterSpacing, lineHeight, size, space, textAlign, textStyle, width } from "styled-system";
-import { TypographyComponentProps } from ".";
+import { TypographyComponentStyleProps } from ".";
 
-const Text = styled.Text.withConfig<TypographyComponentProps>({
+const Text = styled.Text.withConfig<TypographyComponentStyleProps>({
   // avoid forwarding styled-system's props to dom
   shouldForwardProp
-})<TypographyComponentProps>(
+})<TypographyComponentStyleProps>(
   space,
   fontSize,
   fontStyle,

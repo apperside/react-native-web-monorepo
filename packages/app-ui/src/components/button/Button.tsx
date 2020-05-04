@@ -2,15 +2,15 @@ import React from "react";
 import { TouchableOpacity } from "react-native";
 import styled, { useTheme } from "styled-components/native";
 import { border, color, flexbox, layout, size, space, variant } from "styled-system";
-import { ButtonProps } from ".";
+import { ButtonStyleProps } from ".";
 import { appTheme } from "../..";
 import Text from "../typography";
 import shouldForwardProp from "@styled-system/should-forward-prop";
 
-export const ButtonSpecs = styled(TouchableOpacity).withConfig<ButtonProps>({
+export const ButtonSpecs = styled(TouchableOpacity).withConfig<ButtonStyleProps>({
   // avoid forwarding styled-system's props to dom
   shouldForwardProp
-})<ButtonProps>(
+})<ButtonStyleProps>(
   space,
   size,
   layout,
@@ -22,16 +22,19 @@ export const ButtonSpecs = styled(TouchableOpacity).withConfig<ButtonProps>({
   })
 );
 
-const Button: React.FC<React.ComponentProps<typeof ButtonSpecs>> = (
+type Props = React.ComponentProps<typeof ButtonSpecs> & { onClick: (e: any) => void }
+const Button: React.FC<Props> = (
   {
     textStyle: inlineTextStyle,
     variant,
+    onClick,
     ...props
   }) => {
   const theme = useTheme();
   const themeTextStyle = theme.button.variants[variant]?.textStyle;
   const { variants, ...baseProps } = theme.button;
   return <ButtonSpecs {...baseProps}
+    onPress={onClick}
     {...props}
     variant={variant} >
     <Text

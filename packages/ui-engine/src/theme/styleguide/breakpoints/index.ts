@@ -17,6 +17,21 @@ import { BreakpointNames, ThemeBreakpoints, ObjectOrArray } from "styled-system"
 //   }
 // }
 
+/**
+ * This function takes in input a map and produces an array with aliases
+ * as described here https://styled-system.com/responsive-styles#using-objects
+ *
+ * Basically is an array, with properties attached to it.
+ * So what it will be returned is an array containing all the map's values
+ * with attached all the input object properties
+ *
+ * @param valuesMap the values map to build the object with
+ * @param useArrayProps whenever use or not styled-system's array props
+ *
+ * NOTE ABOUT ARRAY PROPS
+ * https://styled-system.com/guides/array-props
+ * todo: explain pros and cons of array props
+ */
 export const buildObjectOrArray = <P1, P2>(valuesMap: P2, useArrayProps: boolean = false) => {
   // @ts-ignore
   const result: ObjectOrArray<P1, keyof P2> = [];
@@ -46,18 +61,15 @@ let breakpointsMap: ThemeBreakpoints = {
 };
 
 /**
- * create breakpoints aliases
- * The final structure will be an array which also has named properties
+ * given the input object it will produce mediaqueries to be easily used with  styled-components
  *
- * https://styled-system.com/responsive-styles/#using-objects
- *
+ * @param breakpoints an object where the keys are the breakpoint names and the values the breakpoint value
+ * @param useArrayProps whenever or not to use styled-system's array props https://styled-system.com/guides/array-props
  */
-
 export const buildBreakpoints = (breakpoints?: ThemeBreakpoints, useArrayProps: boolean = false) => {
   if (!breakpoints) return [];
   buildMediaQueries(breakpoints);
   breakpointsMap = breakpoints;
-  // alert(buildObjectOrArray);
   return buildObjectOrArray<number | string | symbol, ThemeBreakpoints>(breakpoints, useArrayProps);
 };
 

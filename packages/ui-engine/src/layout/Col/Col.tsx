@@ -17,8 +17,5 @@ export const Col = styled.View.withConfig<ColProps>({ shouldForwardProp })<ColPr
   space,
   margin,
   layout,
-  color,
-  {
-    borderStyle: "solid"
-  }
+  color
 );

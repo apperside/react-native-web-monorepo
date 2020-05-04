@@ -8,7 +8,8 @@ Grid.defaultProps = {
   flexWrap: "wrap",
   display: "flex",
   width: 1,
-  flexDirection: "row"
+  flexDirection: "column",
+  boxSizing: "border-box"
 };
 
 export { Grid };

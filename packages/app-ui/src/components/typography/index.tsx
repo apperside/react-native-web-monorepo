@@ -10,7 +10,7 @@ export type TypographyVariants =
   "black" |
   "extended";
 
-export type TypographyComponentProps =
+export type TypographyComponentStyleProps =
   & SSTypographyProps
   & SpaceProps
   & WidthProps
@@ -29,7 +29,7 @@ export type TypographyComponentProps =
   }
 
 export interface CustomComponentsTheme {
-  typography?: ThemedComponentWithVariants<TypographyComponentProps, TypographyVariants>
+  typography?: ThemedComponentWithVariants<TypographyComponentStyleProps, TypographyVariants>
   // button?: ButtonProps
 }
 declare module "styled-system" {
@@ -43,10 +43,11 @@ declare module "styled-system" {
   }
 
   export interface ThemeFontSizes {
-    small: string
-    medium: string
-    big: string
-    [key: string]: string
+    small: any
+    medium: any
+    big: any
+    screenTitle: any
+    [key: string]: any
 
   }
 }
@@ -63,6 +64,7 @@ export const fontSizeMap: ThemeFontSizes = {
   small: "0.8rem",
   medium: "1rem",
   big: "1.3rem",
+  screenTitle: 22,
   "1.1rem": "1.1rem"
 };
 

@@ -1,7 +1,7 @@
 
 import { ThemedComponentWithVariants } from "@apperside/ui-engine/src/theme";
-import { TypographyComponentProps, TypographyVariants } from ".";
-export const typographyTheme: ThemedComponentWithVariants<TypographyComponentProps, TypographyVariants> = {
+import { TypographyComponentStyleProps, TypographyVariants } from ".";
+export const typographyTheme: ThemedComponentWithVariants<TypographyComponentStyleProps, TypographyVariants> = {
   variants: {
     regular: {
       fontSize: {

@@ -10,8 +10,5 @@ export const Grid = styled.div.withConfig<GridProps>({ shouldForwardProp })<Grid
   border,
   flex,
   margin,
-  color,
-  {
-    boxSizing: "border-box"
-  }
+  color
 );

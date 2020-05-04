@@ -3,7 +3,6 @@ import Button from "./button";
 import TextInput from "./textinput";
 import Text from "./typography";
 import { AppDispatch } from "@apperside/commons/src/redux";
-// import { loginAction } from "@apperside/commons/src/redux/loading/actions";
 import { isLoadingSelector } from "@apperside/commons/src/redux/loading/selectors";
 import { VFlexBox } from "@apperside/ui-engine/src/layout";
 import React from "react";
@@ -21,20 +20,22 @@ const ExamplePage: React.FC<{}> = props => {
   const isLoading = useSelector(isLoadingSelector);
 
   return <VFlexBox flex={1}
-    alignItems="flex-start"
+    alignItems="center"
+    border="1px solid red"
     width={1}>
-    <Text
-      mt={100}>The title</Text>
-    <MyBox width={1 / 2}
+    <Text variant="bold"
+      fontSize="screenTitle">Welcome</Text>
+    <MyBox width={8 / 10}
       border="1px solid red">
-      <Text>This is my box</Text>
+      <Text>This is a div on the web a d a View on RN</Text>
     </MyBox>
-    <TextInput placeholder="ciaone"
+    <TextInput onChange={(e) => console.warn("change")}
+      placeholder="Insert code"
       my={10}></TextInput>
     {!!isLoading &&
       <Text>CARICAMENTO</Text>
     }
-    <Button onPress={onClick} >CLICCAMI</Button>
+    <Button onClick={onClick} >CLICK ME</Button>
   </VFlexBox>;
 };
 export default ExamplePage;

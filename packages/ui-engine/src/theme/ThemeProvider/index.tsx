@@ -3,7 +3,7 @@ import { DefaultTheme } from "styled-components";
 import { ObjectOrArray, ThemeBorders, ThemeBorderWidths, ThemeBreakpoints, ThemeColors, ThemeFontFamilies, ThemeFontSizes, ThemeSizes, ThemeSpaces } from "styled-system";
 import { buildBreakpoints } from "../styleguide/breakpoints";
 import { SCThemeProvider } from "./ThemeProvider";
-// import { typografyVariants } from "../styleguide/typography/TypographyComponent";
+
 export type ThemeSpecs = {
   borderWidths?: ThemeBorderWidths,
   borders?: ThemeBorders
@@ -13,7 +13,6 @@ export type ThemeSpecs = {
   spaces?: ThemeSpaces
   fontFamilies?: ThemeFontFamilies
   fontSizes?: ThemeFontSizes
-  // typograpfyVariants?: { [key in keyof TypographyVariants]: TypographyProps }
 }
 
 export type ThemeProviderProps = {
@@ -21,6 +20,13 @@ export type ThemeProviderProps = {
   themeSpecs?: ThemeSpecs
 }
 
+/**
+ *
+ * @param valuesMap the map of key/value pairs
+ * @param useArrayProps is use or not styled-system array props for responsive styles
+ *
+ *
+ */
 export const buildObjectOrArray = <P1, P2>(valuesMap: P2, useArrayProps: boolean = false) => {
   // @ts-ignore
   const result: ObjectOrArray<P1, keyof P2> = [];
