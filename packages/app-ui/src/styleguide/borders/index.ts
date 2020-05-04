@@ -4,7 +4,7 @@ declare module "styled-system" {
   export interface ThemeBorders {
     redThin: string,
     redTick: string,
-    // [key: string]: string
+    [key: string]: string
   }
 
   export interface ThemeBorderWidths {

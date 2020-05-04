@@ -33,31 +33,6 @@ declare module "styled-system" {
   }
 
 }
-// type ColorKeys =
-//     "primary" |
-//     "secondary" |
-//     "secondaryLight" |
-//     "secondaryDark" |
-//     "link" |
-//     "success" |
-//     "warning" |
-//     "error" |
-//     "heading" |
-//     "text" |
-//     "disabled" |
-//     "footer" |
-//     "cta" |
-//     "ctaButton1" |
-//     "ctaButton2" |
-//     "ctaButton1Hover" |
-//     "ctaButton2Hover" |
-//     "darkGrayBorder" |
-//     "headerBackground" |
-//     "headerLinks" |
-//     "grayLight" |
-//     "grayMedium" |
-//     "grayDark";
-// // export type ThemeColors = { [key in ColorKeys]: CSS.ColorProperty }
 
 export const themeColors: ThemeColors = {
   primary: "#191e64",

@@ -24,7 +24,7 @@ const AppContent: React.FC<{}> = props => {
     width={1}>
     <Text
       mt={100}>The title</Text>
-    <MyBox width={1 / 2}
+    <MyBox width={{ default: 1 / 2, tablet: 1 }}
       border="1px solid red">
       <Text>This is my box</Text>
     </MyBox>

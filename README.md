@@ -9,13 +9,9 @@ This is a sample project illustrating the structure of a project using react, re
 
 **GOALS**
 
-- Efficiently build, manage and mantain a design system
-
+- Efficiently build, manage and maintain a design system using type-checked tokens for style attributes
 - Maximize code sharing across react and react-native
-
 - Cross module logic sharing
-
-  
 
 **MODULES**
 
@@ -39,8 +35,6 @@ This is a sample project illustrating the structure of a project using react, re
 **packages/commons**: logic related code (redux, selectors, api call ecc..)
 
   
-  
-
 # APP
 
   
@@ -55,6 +49,7 @@ This is a classical react-native app. The only customization needed to make it w
 
   This a classic CRA application, plugged with `react-native-web` and `react-app-rewired`.
  
+TODO: add highlights of integrating react-native-web and react-app-rewired
 
 # UI-ENGINE
 
@@ -79,11 +74,26 @@ With [styled-system's responsive styles](https://styled-system.com/responsive-st
 
 With the breakpoint names and  tokens `mobile-margin` , `tablet-margin` and `desktop-margin` being defined in the app theme
 
-**TYPESCRIPT SUPPORT**: Unfortunately styled-system does not have full typescript support for all of this features, so this module is based on a custom `styled-system.d.ts` file
+**TYPESCRIPT SUPPORT**
+Unfortunately styled-system does not have full typescript support for all of this features, so this module, at the moment, is based on a custom `styled-system.d.ts` file. Another approach is to totally fork styled-system and add the a built-in definition file
+
+**HOW IT WORKS**
+In order to work, styled-system  wants:
+ 1. A theme object with a specific schema
+ 2. The values of that object being of type "`ObjectOrArray`", which are arrays with custom properties [https://styled-system.com/responsive-styles/#using-objects](https://styled-system.com/responsive-styles/#using-objects)
+
+The main purpose of this module is to 
+- Abstract the creation of such structure 
+- Provide a custom `ThemeProvider` that:
+	- takes in input a set of key-value pairs
+	- generates the theme object to be consumed by styled-system 
+	- return a styled-components `ThemeProvider` instance which takes the previously generated theme 
+- Provide mediaQuery utilities to easily add responsive styles with styled-components using type-checked syntax for breakpoint names
 
 # APP-UI
 
-This is the package where all the UI related code is located: theme declaration, components and other UI related stuff.
+This is the package where all the UI related code is located: theme declaration, components and other UI related stuff. Since it is a monorepo, the code containing the UI specs and components must be in a dedicated, shared package.
+In order to develop a mobile or web application only, this code can be just be in the main project.
 
 > At the moment, even though we use react-native-web, we cannot use RN
 > components in the web project because styled-system responsive styles
@@ -153,7 +163,7 @@ And **Box.web.ts**
         ${background}
         ${position}
     `;
-It's almost the same implementation except for the fact that the firtst uses `View` and the latter uses `div`
+It's almost the same implementation except for the fact that the first uses `View` and the latter uses `div`
 
 It will then be exported from Box.index.tsx
 
@@ -171,26 +181,176 @@ We can now write the following in both a React Native or React JS environment
 
 And it will work transparently on web and mobile
 
-For this reason this components have been created:
-- Box: 
-	- `div` on the web
-	- `View` on mobile
-- Row: a `Box` with flex and horizontal orientation
-- Col: a `Box` with flex and vertt orientation
-What's missing:
-- make styled-system responsive style work with RN
+## THEMING
+The theming, and its type checking, is implemented by overriding the interfaces declared in the custom `styled-system.d.ts` file.
 
+### BREAKPOINTS
+
+    import { ThemeBreakpoints } from "styled-system";
+    
+    declare module "styled-system" {
+    
+      export interface ThemeBreakpoints {
+        // default is needed by styled-system in order to work
+        default: number | string,
+        mobileM: number | string,
+        mobileL: number | string,
+        tablet: number | string,
+        desktopLow: number | string,
+        desktopMid: number | string,
+        desktop: number | string,
+        desktopLarge: number | string
+      }
+    }
+    
+    /**
+     * The logic is mobile first, so the first breakpoint is alway from 0 to the first declared one
+     */
+    export const breakpointsMap: ThemeBreakpoints = {
+      default: "0px",
+      mobileM: "375px",
+      mobileL: "425px",
+      tablet: "600px",
+      desktopLow: "1024px",
+      desktopMid: "1366px",
+      desktop: "1440px",
+      desktopLarge: "1620px"
+    };
+    
+    export default breakpointsMap;
+
+### COLORS
+
+    import { ThemeColors } from "styled-system";
+    
+    declare module "styled-system" {
+    
+      export interface ThemeColors {
+        primary: string;
+        secondary: string;
+        secondaryLight: string;
+        secondaryDark: string;
+        success: string;
+        warning: string;
+        error: string;
+      }
+    
+    }
+    
+    export const themeColors: ThemeColors = {
+      primary: "#191e64",
+      secondary: "#ff618d",
+      secondaryLight: "#ff7c32",
+      secondaryDark: "#ff618d",
+      success: "#52c41a",
+      warning: "#faad14",
+      error: "#e84118"
+    };
+
+### SIZES
+
+    import { ThemeSizes } from "styled-system";
+    
+    /**
+     * Values used for
+     *
+     * width, height, minWidth, maxWidth, minHeight, maxHeight, size
+     */
+    declare module "styled-system" {
+      export interface ThemeSizes {
+        HEADER_DESKTOP: number,
+        HEADER_MOBILE: number;
+      }
+    }
+    
+    export const sizesMap: ThemeSizes = {
+      HEADER_DESKTOP: 150,
+      HEADER_MOBILE: 70
+    };
+
+### SPACES
+
+    import { ThemeSpaces } from "styled-system";
+    
+    declare module "styled-system" {
+    
+      export interface ThemeSpaces {
+        NONE: number;
+        XS: number;
+        S: number;
+        M: number;
+        L: number;
+        XL: number;
+        XXL: number;
+        DESKTOP_MAIN_PADDING: number | string;
+        DESKTOP_LOW_PADDING: number | string;
+        DESKTOP_LARGE_MAIN_PADDING: number | string;
+        TABLET_MAIN_PADDING: number | string;
+        MOBILE_MAIN_PADDING: number | string;
+      }
+    
+    }
+    
+    export const spacesMap: ThemeSpaces = {
+      NONE: 0,
+      XS: 2,
+      S: 4,
+      M: 8,
+      L: 16,
+      XL: 32,
+      XXL: 64,
+      DESKTOP_MAIN_PADDING: "130px",
+      DESKTOP_LOW_PADDING: "118px",
+      DESKTOP_LARGE_MAIN_PADDING: "170px",
+      TABLET_MAIN_PADDING: "110px",
+      MOBILE_MAIN_PADDING: 25
+    };
+
+### BORDERS
+
+    import { ThemeBorders, ThemeBorderWidths } from "styled-system";
+    declare module "styled-system" {
+    
+      export interface ThemeBorders {
+        redThin: string,
+        redTick: string,
+        [key: string]: string
+      }
+    
+      export interface ThemeBorderWidths {
+        thinerBorder: number
+        thinBorder: number
+        tickBorder: number,
+        [key: string]: number
+      }
+    }
+    
+    export const themeBordersMap: ThemeBorders = {
+      redThin: "2px solid red",
+      redTick: "10px solid red"
+    };
+    
+    export const themeBorderWidthsMap: ThemeBorderWidths = {
+      thinerBorder: 1,
+      thinBorder: 2,
+      tickBorder: 4
+    };
 
 # COMMONS
-
+A module containing all shared logic.
+TODO: illustrate redux structure
   
 
 # TODO
 - imports refactor
 - setup build scripts
 - better eslint shared configuration
+- change default files to web instead of mobile so the module can be used on web without react-native-web
 
   
+
+
+
 
 
 

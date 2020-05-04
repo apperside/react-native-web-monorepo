@@ -1,9 +1,15 @@
 import React from "react";
 import { DefaultTheme } from "styled-components";
-import { ObjectOrArray, ThemeBorders, ThemeBorderWidths, ThemeBreakpoints, ThemeColors, ThemeFontFamilies, ThemeFontSizes, ThemeSizes, ThemeSpaces } from "styled-system";
+import { ThemeBorders, ThemeBorderWidths, ThemeBreakpoints, ThemeColors, ThemeFontFamilies, ThemeFontSizes, ThemeSizes, ThemeSpaces } from "styled-system";
 import { buildBreakpoints } from "../styleguide/breakpoints";
 import { SCThemeProvider } from "./ThemeProvider";
+import { buildObjectOrArray } from "..";
 
+/**
+ * This is the shape for a raw theme.
+ * It must be feeded to buildTheme function to get a theme
+ * object which works with styled-system
+ */
 export type ThemeSpecs = {
   borderWidths?: ThemeBorderWidths,
   borders?: ThemeBorders
@@ -15,32 +21,7 @@ export type ThemeSpecs = {
   fontSizes?: ThemeFontSizes
 }
 
-export type ThemeProviderProps = {
-  theme?: DefaultTheme,
-  themeSpecs?: ThemeSpecs
-}
-
-/**
- *
- * @param valuesMap the map of key/value pairs
- * @param useArrayProps is use or not styled-system array props for responsive styles
- *
- *
- */
-export const buildObjectOrArray = <P1, P2>(valuesMap: P2, useArrayProps: boolean = false) => {
-  // @ts-ignore
-  const result: ObjectOrArray<P1, keyof P2> = [];
-  Object.keys(valuesMap).forEach((valueKey) => {
-    if (useArrayProps) {
-      result.push(valuesMap[valueKey]);
-    }
-    // aliases
-    result[valueKey] = valuesMap[valueKey];
-  });
-  return result;
-};
-
-export const buildTheme = (specs: ThemeSpecs): DefaultTheme => {
+export const buildBaseTheme = (specs: ThemeSpecs): DefaultTheme => {
   const defaultTheme: DefaultTheme = {
     space: buildObjectOrArray(specs.spaces),
     breakpoints: buildBreakpoints(specs.breakpoints),
@@ -55,11 +36,16 @@ export const buildTheme = (specs: ThemeSpecs): DefaultTheme => {
   return defaultTheme;
 };
 
+export type ThemeProviderProps = {
+  theme?: DefaultTheme,
+  themeSpecs?: ThemeSpecs
+}
+
 export const ThemeProvider: React.FC<ThemeProviderProps> = ({ theme, themeSpecs, children }) => {
   let finalTheme = theme;
 
   if (!finalTheme && themeSpecs) {
-    finalTheme = buildTheme(themeSpecs);
+    finalTheme = buildBaseTheme(themeSpecs);
   }
   if (finalTheme) {
     return <SCThemeProvider theme={finalTheme}>

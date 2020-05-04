@@ -25,6 +25,18 @@
 // TypeScript Version: 2.9
 declare module "styled-system" {
 
+  export interface ThemeBreakpoints {
+    // default: string;
+  }
+
+  export type BreakpointNames = keyof ThemeBreakpoints
+
+  export interface ThemeColors {
+
+  }
+
+  export type ColorKeys = keyof (ThemeColors) | CSS.NamedColor
+
   /**
    * Values used for  margins and paddings
    */
@@ -42,18 +54,6 @@ declare module "styled-system" {
   }
 
   export type ThemeSizeNames = keyof ThemeSizes
-
-  export interface ThemeColors {
-
-  }
-
-  export type ColorKeys = keyof (ThemeColors) | CSS.NamedColor
-
-  export interface ThemeBreakpoints {
-    // default: string;
-  }
-
-  export type BreakpointNames = keyof ThemeBreakpoints
 
   export interface ThemeFontSizes {
 
@@ -119,11 +119,6 @@ declare module "styled-system" {
   }
 
   export type RequiredTheme = Required<Theme>;
-
-  // export type ResponsiveValue<
-  //     T,
-  //     ThemeType extends Theme = RequiredTheme,
-  //     > = T | null | Array<T | null> | { [key in ThemeValue<"breakpoints", ThemeType> & string | number]?: T };
 
   export type ResponsiveValue<T, TT = T> =
     T | null | Array<T | null> | { [key in keyof ThemeBreakpoints]?: T };

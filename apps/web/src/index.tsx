@@ -1,9 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import "./index.css";
+// import "./index.css";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
-import "@apperside/app-ui/src/index.scss";
+import "./index.scss";
 ReactDOM.render(
   <React.StrictMode>
     <App />

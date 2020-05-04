@@ -1,10 +1,9 @@
 import { App as BaseApp } from "@apperside/ui-engine/src/App";
 import { Col, Grid, Row } from "@apperside/ui-engine/src/layout";
 import { ThemedComponentWithVariants } from "@apperside/ui-engine/src/theme";
-import { buildTheme, ThemeSpecs } from "@apperside/ui-engine/src/theme/ThemeProvider";
+import { buildBaseTheme, ThemeSpecs } from "@apperside/ui-engine/src/theme/ThemeProvider";
 import React from "react";
-import { DefaultTheme } from "styled-components";
-import { Theme } from "styled-system";
+import { CustomComponentsTheme, DefaultTheme } from "styled-components";
 import { ButtonStyleProps } from "./components/button";
 import { buttonTheme, ButtonVariants } from "./components/button/Button.theme";
 import { TextInputStyleProps, TextInputVariants } from "./components/textinput";
@@ -20,13 +19,13 @@ import { spacesMap } from "./styleguide/spaces";
 export { Col, Grid, Row };
 
 declare module "styled-components" {
-  export interface DefaultTheme extends Theme {
+  export interface CustomComponentsTheme {
     typographyStyles: ThemedComponentWithVariants<MYTypographyProps, TypographyVariants>
     textInput: ThemedComponentWithVariants<TextInputStyleProps, TextInputVariants>
     button: ThemedComponentWithVariants<ButtonStyleProps, ButtonVariants>
-
   }
 }
+
 const themeSpecs: ThemeSpecs = {
   borderWidths: themeBorderWidthsMap,
   borders: themeBordersMap,
@@ -38,12 +37,17 @@ const themeSpecs: ThemeSpecs = {
   fontSizes: fontSizeMap
 };
 
+const getAdditionalTheme = (): CustomComponentsTheme => {
+  return {
+    button: buttonTheme,
+    typographyStyles: typographyTheme,
+    textInput: textInputTheme
+  };
+};
+
 export const appTheme: DefaultTheme = {
-  ...buildTheme(themeSpecs),
-  // typographyStyles: typographyVariants,
-  button: buttonTheme,
-  typographyStyles: typographyTheme,
-  textInput: textInputTheme
+  ...buildBaseTheme(themeSpecs),
+  ...getAdditionalTheme()
 };
 
 export const App: React.FC = props => {
