@@ -1,6 +1,6 @@
 import shouldForwardProp from "@styled-system/should-forward-prop";
 import styled from "styled-components/native";
-import { background, borderRadius, variant, flexbox, color, fontFamily, fontSize, fontStyle, fontWeight, letterSpacing, lineHeight, size, space, textAlign, textStyle, width } from "styled-system";
+import { background, border, color, flexbox, fontFamily, fontSize, fontStyle, fontWeight, letterSpacing, lineHeight, size, space, textAlign, textStyle, variant, width } from "styled-system";
 import { TypographyComponentStyleProps } from ".";
 
 const Text = styled.Text.withConfig<TypographyComponentStyleProps>({
@@ -16,7 +16,7 @@ const Text = styled.Text.withConfig<TypographyComponentStyleProps>({
   letterSpacing,
   fontFamily,
   fontWeight,
-  borderRadius,
+  border,
   lineHeight,
   textAlign,
   background,

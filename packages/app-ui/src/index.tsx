@@ -1,5 +1,5 @@
 import { App as BaseApp } from "@apperside/ui-engine/src/App";
-import { Col, Grid, Row } from "@apperside/ui-engine/src/layout";
+import { Col, Grid, Row } from "@apperside/ui-engine/src";
 import { ThemedComponentWithVariants } from "@apperside/ui-engine/src/theme";
 import { buildBaseTheme, ThemeSpecs } from "@apperside/ui-engine/src/theme/ThemeProvider";
 import React from "react";

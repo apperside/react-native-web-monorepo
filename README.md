@@ -9,7 +9,7 @@ This is a sample project illustrating the structure of a project using react, re
 
 **GOALS**
 
-- Efficiently build, manage and maintain a design system using type-checked tokens for style attributes
+- Efficiently build, manage and maintain a design system using type-checked tokens for style props fully integrated with the app theme
 - Maximize code sharing across react and react-native
 - Cross module logic sharing
 
@@ -53,7 +53,7 @@ TODO: add highlights of integrating react-native-web and react-app-rewired
 
 # UI-ENGINE
 
-This is the design system core.
+This is the design system's core.
 At its core, the module uses styled-system, which is very useful to add style props features with awesome theme integration and responsive styles.
 
 With [styled-system's responsive styles](https://styled-system.com/responsive-styles#using-objects) for example, you can write code like this:
@@ -72,56 +72,74 @@ With [styled-system's responsive styles](https://styled-system.com/responsive-st
       }}
     />
 
-With the breakpoint names and  tokens `mobile-margin` , `tablet-margin` and `desktop-margin` being defined in the app theme
+Where  `default`, `tablet`, `desktop`,  `mobile-margin`, `tablet-margin` and `desktop-margin` are theme variables and are type-checked
 
 **TYPESCRIPT SUPPORT**
 Unfortunately styled-system does not have full typescript support for all of this features, so this module, at the moment, is based on a custom `styled-system.d.ts` file. Another approach is to totally fork styled-system and add the a built-in definition file
 
 **HOW IT WORKS**
-In order to work, styled-system  wants:
- 1. A theme object with a specific schema
+In order to work, styled-system wants:
+ 1. A theme object respecting a specific schema
  2. The values of that object being of type "`ObjectOrArray`", which are arrays with custom properties [https://styled-system.com/responsive-styles/#using-objects](https://styled-system.com/responsive-styles/#using-objects)
 
-The main purpose of this module is to 
+The main purpose of our module is to 
 - Abstract the creation of such structure 
 - Provide a custom `ThemeProvider` that:
-	- takes in input a set of key-value pairs
-	- generates the theme object to be consumed by styled-system 
-	- return a styled-components `ThemeProvider` instance which takes the previously generated theme 
+	1) takes in input a set of key-value pairs
+	2) generates the theme object to be consumed by styled-system 
+	3) return a styled-components `ThemeProvider` instance (specific for web or mobile environment) which takes in input the previously generated theme 
 - Provide mediaQuery utilities to easily add responsive styles with styled-components using type-checked syntax for breakpoint names
+- Provide styled-system ready basic building blocks:
+	- **Box**: a div abstraction
+		- **FlexBox**: a `Box` with flex and default orientation (row on web, column on mobile)
+		- **VFlexBox**: a `Box` with flex and vertical orientation
+		- **HFlexBox**: a `Box` with flex and horizontal orientation
+	- **Grid**: a full width Box 
+	- **Row**: a Box with horizontal flex behaviour
+	- **Col**: mostly like `Box`, with `boxSizing="border-box"`
+		- **FlexCol**: a `Col` with flex and default orientation (row on web, column on mobile)
+		- **VFlexBox**: a `Col` with flex and vertical orientation
+		- **HFlexBox**: a `Col` with flex and horizontal orientation
+
+> `Col` and its variants may be almost useless since they are almost
+> identical to `Box`, but their main purpose is to be semantically
+> meaning full when building a `Grid`, for example
+
+    <Grid>
+      <Row>
+        <Col width={{ default: 1, desktop: 1 / 2 }} />
+        <Col width={{ default: 1, desktop: 1 / 2 }} />
+      </Row>
+      <Row>
+        <Col width={{ default: 1, desktop: 1 / 3 }} />
+        <Col width={{ default: 1, desktop: 1 / 3 }} />
+        <Col width={{ default: 1, desktop: 1 / 3 }} />
+      </Row>
+    </Grid>
 
 # APP-UI
 
 This is the package where all the UI related code is located: theme declaration, components and other UI related stuff. Since it is a monorepo, the code containing the UI specs and components must be in a dedicated, shared package.
-In order to develop a mobile or web application only, this code can be just be in the main project.
 
-> At the moment, even though we use react-native-web, we cannot use RN
+In order to develop a mobile only or web only application, this code can just be part of the main project, anyway it always is a good practice to keep it separated so you are ready for any potential future need.
+
+> At the moment, even though react-native-web is used, we cannot use RN
 > components in the web project because styled-system responsive styles
 > do not work on RN.
 
 **So why is react-native-web used?**
-It is used because it make it possible to take benefit of [react-native file naming for platform specific code](https://reactnative.dev/docs/platform-specific-code#native-specific-extensions-ie-sharing-code-with-nodejs-and-web) on the web project.
+It is used because it makes possible to take benefit of [react-native file naming for platform specific code](https://reactnative.dev/docs/platform-specific-code#native-specific-extensions-ie-sharing-code-with-nodejs-and-web) on the web project.
 
-This made it possible to create the following files:
+This allow to create for example the following structure:
 ```
 +-- Box
 |   +-- Box.tsx
 |   +-- Box.web.tsx
 |   +-- index.tsx
-+-- Col
-|   +-- Col.tsx
-|   +-- Col.web.tsx
-|   +-- index.tsx
-+-- Grid
-|   +-- Grid.tsx
-|   +-- Grid.web.tsx
-|   +-- index.tsx
-+-- Row
-|   +-- index.tsx
-|   +-- Row.tsx
-|   +-- Row.web.tsx
 ```
-Let's look for example to **Box.tsx**
+In those files a specific implementations is created for the specific platform, but all implementations have the the interface.
+
+Let's look to **`Box.tsx`**
 
     import shouldForwardProp from "@styled-system/should-forward-prop";
     import styled from "styled-components/native";
@@ -143,7 +161,7 @@ Let's look for example to **Box.tsx**
 
 
 
-And **Box.web.ts**
+And **`Box.web.ts`**
 
 
     import shouldForwardProp from "@styled-system/should-forward-prop";
@@ -165,18 +183,40 @@ And **Box.web.ts**
     `;
 It's almost the same implementation except for the fact that the first uses `View` and the latter uses `div`
 
-It will then be exported from Box.index.tsx
+And now **`index.ts`**
 
-    export {Box) from "./Box";
+    import React from "react";
+    import { BackgroundProps, BorderProps, ColorProps, FlexboxProps, LayoutProps, MarginProps, PositionProps, SpaceProps } from "styled-system";
+    import { Box } from "./Box";
+    
+    export type BoxProps = LayoutProps
+      & FlexboxProps
+      & BorderProps
+      & SpaceProps
+      & MarginProps
+      & ColorProps
+      & BackgroundProps
+      & PositionProps
+    
+    export { Box };
 
-This will pick the export from `Box.tsx` on mobile and `Box.web.tsx` on the web
+Note that the following import
+
+    import {Box) from "./Box";
+
+Will pick the export from `Box.tsx` on mobile and `Box.web.tsx` on the web
 
 We can now write the following in both a React Native or React JS environment
 
     import {Box} from "@my-awesome-module/components"
     
     const MyComponent = () => {
-        return <Box></Box>
+        return <Box 
+           backgroundColor="your-theme-color"
+           borderColor="your-other-theme-color"
+        >
+        This is am awesome box with custom style properties
+         </Box>
     }
 
 And it will work transparently on web and mobile
@@ -348,6 +388,7 @@ TODO: illustrate redux structure
 - change default files to web instead of mobile so the module can be used on web without react-native-web
 
   
+
 
 
 

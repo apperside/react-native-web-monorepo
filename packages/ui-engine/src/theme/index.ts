@@ -1,6 +1,7 @@
 import * as CSS from "csstype";
 import { DefaultTheme } from "styled-components";
 import { ObjectOrArray, Theme as StyledSystemTheme, ThemeBorders, ThemeBorderStyles, ThemeBreakpoints, ThemeColors, ThemeFontFamilies, ThemeFontSizes, ThemeSizes, ThemeSpaces } from "styled-system";
+export { ThemeProvider } from "./ThemeProvider";
 
 export type VariantsProps<Props, Variants extends string> =
   { [key in Variants]: Props & { [key in CSS.Pseudos]?: Props } }

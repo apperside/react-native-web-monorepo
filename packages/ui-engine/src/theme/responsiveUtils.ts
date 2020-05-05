@@ -1,6 +1,6 @@
 
 import { BreakpointNames, ThemeBreakpoints, ObjectOrArray } from "styled-system";
-import { buildObjectOrArray } from "../..";
+import { buildObjectOrArray } from ".";
 
 /**
  * The logic is mobile first, so the first breakpoint is alway from 0 to the first declared one
@@ -30,8 +30,8 @@ const mediaqueries: { [key in keyof ThemeBreakpoints]: string } = {};
  */
 export const buildBreakpoints = (breakpoints?: ThemeBreakpoints, useArrayProps: boolean = false) => {
   if (!breakpoints) return [];
-  buildMediaQueries(breakpoints);
   breakpointsMap = breakpoints;
+  buildMediaQueries(breakpoints);
   return buildObjectOrArray<number | string | symbol, ThemeBreakpoints>(breakpoints, useArrayProps);
 };
 

@@ -1,11 +1,10 @@
+import shouldForwardProp from "@styled-system/should-forward-prop";
 import React from "react";
 import { TouchableOpacity } from "react-native";
 import styled, { useTheme } from "styled-components/native";
 import { border, color, flexbox, layout, size, space, variant } from "styled-system";
 import { ButtonStyleProps } from ".";
-import { appTheme } from "../..";
 import Text from "../typography";
-import shouldForwardProp from "@styled-system/should-forward-prop";
 
 export const ButtonSpecs = styled(TouchableOpacity).withConfig<ButtonStyleProps>({
   // avoid forwarding styled-system's props to dom

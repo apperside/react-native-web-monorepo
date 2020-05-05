@@ -1,7 +1,7 @@
 import React from "react";
 import { DefaultTheme } from "styled-components";
 import { ThemeBorders, ThemeBorderWidths, ThemeBreakpoints, ThemeColors, ThemeFontFamilies, ThemeFontSizes, ThemeSizes, ThemeSpaces } from "styled-system";
-import { buildBreakpoints } from "../styleguide/breakpoints";
+import { buildBreakpoints } from "../responsiveUtils";
 import { SCThemeProvider } from "./ThemeProvider";
 import { buildObjectOrArray } from "..";
 
