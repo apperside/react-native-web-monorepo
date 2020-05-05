@@ -1,7 +1,7 @@
 import { BorderProps, ColorProps, FlexboxProps, LayoutProps, SizeProps, SpaceProps } from "styled-system";
 import { TypographyComponentStyleProps, TypographyVariants } from "../typography";
-import { appTheme } from "../..";
 import Button from "./Button";
+import { ButtonVariants, buttonTheme } from "./Button.theme";
 
 export type ButtonStyleProps =
   & SpaceProps
@@ -9,13 +9,13 @@ export type ButtonStyleProps =
   & ColorProps
   & BorderProps
   & FlexboxProps
+  & LayoutProps
   & {
     textStyle?: TypographyComponentStyleProps
-  }
-  & LayoutProps;
+  };
 
 Button.defaultProps = {
-  ...appTheme.button,
-  variant: "primary"
+  variant: "primary",
+  ...buttonTheme
 };
 export default Button;

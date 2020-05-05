@@ -9,8 +9,6 @@ export const typographyTheme: ThemedComponentWithVariants<TypographyComponentSty
         tablet: 20,
         desktop: 30
       },
-      // color: "red",
-      // fontWeight: "bold",
       fontFamily: "regular",
       lineHeight: {
         default: 1.36,
@@ -25,7 +23,6 @@ export const typographyTheme: ThemedComponentWithVariants<TypographyComponentSty
         desktop: 24
       },
       color: "white",
-      // fontWeight: "bold",
       fontFamily: "black",
       lineHeight: {
         default: 1.3,
@@ -39,7 +36,6 @@ export const typographyTheme: ThemedComponentWithVariants<TypographyComponentSty
         tablet: 24,
         desktop: 20
       },
-      // fontWeight: 700,
       fontFamily: "bold",
       lineHeight: {
         default: 1.38,
@@ -50,7 +46,6 @@ export const typographyTheme: ThemedComponentWithVariants<TypographyComponentSty
     extended: {
       fontSize: 18,
       fontWeight: 700,
-      // color: "primary",
       fontFamily: "extended",
       lineHeight: 1.33
     },

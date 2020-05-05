@@ -1,7 +1,7 @@
 import { App as BaseApp } from "@apperside/ui-engine/src/App";
-import { Col, Grid, Row } from "@apperside/ui-engine/src/layout";
+import { ThemeSpecs } from "@apperside/ui-engine/src/theme/ThemeProvider";
+import { Col, Grid, Row } from "@apperside/ui-engine/src";
 import { ThemedComponentWithVariants } from "@apperside/ui-engine/src/theme";
-import { buildBaseTheme, ThemeSpecs } from "@apperside/ui-engine/src/theme/ThemeProvider";
 import React from "react";
 import { CustomComponentsTheme, DefaultTheme } from "styled-components";
 import { ButtonStyleProps } from "./components/button";
@@ -37,19 +37,19 @@ const themeSpecs: ThemeSpecs = {
   fontSizes: fontSizeMap
 };
 
-const getAdditionalTheme = (): CustomComponentsTheme => {
-  return {
-    button: buttonTheme,
-    typographyStyles: typographyTheme,
-    textInput: textInputTheme
-  };
+const componentsTheme: CustomComponentsTheme = {
+  button: buttonTheme,
+  typographyStyles: typographyTheme,
+  textInput: textInputTheme
 };
 
-export const appTheme: DefaultTheme = {
-  ...buildBaseTheme(themeSpecs),
-  ...getAdditionalTheme()
-};
+export type WithVariant<P, V> = P & { variant?: V }
+// export const appTheme: DefaultTheme = {
+//   ...buildBaseTheme(themeSpecs),
+//   ...getComponentsTheme()
+// };
 
 export const App: React.FC = props => {
-  return <BaseApp theme={appTheme} >{props.children}</BaseApp>;
+  return <BaseApp theme={themeSpecs}
+    componentsTheme={componentsTheme} >{props.children}</BaseApp>;
 };

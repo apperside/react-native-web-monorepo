@@ -26,13 +26,13 @@
 declare module "styled-system" {
 
   export interface ThemeBreakpoints {
-    // default: string;
+    // to be augmented
   }
 
   export type BreakpointNames = keyof ThemeBreakpoints
 
   export interface ThemeColors {
-
+    // to be augmented
   }
 
   export type ColorKeys = keyof (ThemeColors) | CSS.NamedColor
@@ -41,7 +41,7 @@ declare module "styled-system" {
    * Values used for  margins and paddings
    */
   export interface ThemeSpaces {
-
+    // to be augmented
   }
 
   /**
@@ -50,35 +50,35 @@ declare module "styled-system" {
    * width, height, minWidth, maxWidth, minHeight, maxHeight, size
    */
   export interface ThemeSizes {
-
+    // to be augmented
   }
 
   export type ThemeSizeNames = keyof ThemeSizes
 
   export interface ThemeFontSizes {
-
+    // to be augmented
   }
 
   export type FontSizeNames = keyof ThemeFontSizes
 
   export interface ThemeBorders {
-
+    // to be augmented
   }
 
   export type ThemeBordersNames = keyof ThemeBorders
 
   export interface ThemeBorderWidths {
-
+    // to be augmented
   }
   export type ThemeBorderWidthNames = keyof ThemeBorderWidths
 
   export interface ThemeBorderStyles {
-
+    // to be augmented
   }
   export type ThemeBorderStyleNames = keyof ThemeBorderStyles
 
   export interface ThemeFontFamilies {
-
+    // to be augmented
   }
   export type ThemeFontFamilyNames = keyof ThemeFontFamilies
 
@@ -278,8 +278,7 @@ declare module "styled-system" {
 
   export const space: styleFn;
 
-  export interface MarginProps<ThemeType extends Theme = RequiredTheme>
-    extends Pick<SpaceProps<ThemeType>,
+  export type MarginProps = Pick<SpaceProps<ThemeType>,
     | "m"
     | "margin"
     | "mt"
@@ -293,20 +292,15 @@ declare module "styled-system" {
     | "my"
     | "marginY"
     | "mx"
-    | "marginX"> {
-  }
+    | "marginX">
 
-  export interface MarginTopProps<ThemeType extends Theme = RequiredTheme> extends Pick<SpaceProps<ThemeType>, "mt" | "marginTop"> {
-  }
+  export type MarginTopProps = Pick<SpaceProps<ThemeType>, "mt" | "marginTop">
 
-  export interface MarginBottomProps<ThemeType extends Theme = RequiredTheme> extends Pick<SpaceProps<ThemeType>, "mb" | "marginBottom"> {
-  }
+  export type MarginBottomProps = Pick<SpaceProps<ThemeType>, "mb" | "marginBottom">
 
-  export interface MarginLeftProps<ThemeType extends Theme = RequiredTheme> extends Pick<SpaceProps<ThemeType>, "ml" | "marginLeft"> {
-  }
+  export type MarginLeftProps = Pick<SpaceProps<ThemeType>, "ml" | "marginLeft">
 
-  export interface MarginRightProps<ThemeType extends Theme = RequiredTheme> extends Pick<SpaceProps<ThemeType>, "mr" | "marginRight"> {
-  }
+  export type MarginRightProps = Pick<SpaceProps<ThemeType>, "mr" | "marginRight">
 
   export const margin: styleFn;
   export const marginTop: styleFn;
@@ -314,8 +308,7 @@ declare module "styled-system" {
   export const marginLeft: styleFn;
   export const marginRight: styleFn;
 
-  export interface PaddingProps<ThemeType extends Theme = RequiredTheme>
-    extends Pick<SpaceProps<ThemeType>,
+  export type PaddingProps = Pick<SpaceProps<ThemeType>,
     | "p"
     | "padding"
     | "pt"
@@ -329,20 +322,15 @@ declare module "styled-system" {
     | "py"
     | "paddingY"
     | "px"
-    | "paddingX"> {
-  }
+    | "paddingX">
 
-  export interface PaddingTopProps<ThemeType extends Theme = RequiredTheme> extends Pick<SpaceProps<ThemeType>, "pt" | "paddingTop"> {
-  }
+  export type PaddingTopProps = Pick<SpaceProps<ThemeType>, "pt" | "paddingTop">
 
-  export interface PaddingBottomProps<ThemeType extends Theme = RequiredTheme> extends Pick<SpaceProps<ThemeType>, "pb" | "paddingBottom"> {
-  }
+  export type PaddingBottomProps = Pick<SpaceProps<ThemeType>, "pb" | "paddingBottom">
 
-  export interface PaddingLeftProps<ThemeType extends Theme = RequiredTheme> extends Pick<SpaceProps<ThemeType>, "pl" | "paddingLeft"> {
-  }
+  export type PaddingLeftProps = Pick<SpaceProps<ThemeType>, "pl" | "paddingLeft">
 
-  export interface PaddingRightProps<ThemeType extends Theme = RequiredTheme> extends Pick<SpaceProps<ThemeType>, "pr" | "paddingRight"> {
-  }
+  export type PaddingRightProps = Pick<SpaceProps<ThemeType>, "pr" | "paddingRight">
 
   export const padding: styleFn;
   export const paddingTop: styleFn;
@@ -1404,7 +1392,7 @@ declare module "styled-system" {
 
   export const zIndex: styleFn;
 
-  export interface TopProps<ThemeType extends Theme = RequiredTheme, TVal = CSS.TopProperty<TLengthStyledSystem>> {
+  export interface TopProps<ThemeType extends Theme = RequiredTheme, TVal = (keyof ThemeSpaces) | "auto" | number> {
     /**
      * The top CSS property participates in specifying the vertical position of a
      * positioned element. It has no effect on non-positioned elements.
@@ -1416,7 +1404,7 @@ declare module "styled-system" {
 
   export const top: styleFn;
 
-  export interface RightProps<ThemeType extends Theme = RequiredTheme, TVal = CSS.RightProperty<TLengthStyledSystem>> {
+  export interface RightProps<ThemeType extends Theme = RequiredTheme, TVal = (keyof ThemeSpaces) | "auto" | number> {
     /**
      * The right CSS property participates in specifying the horizontal position of a
      * positioned element. It has no effect on non-positioned elements.
@@ -1428,7 +1416,7 @@ declare module "styled-system" {
 
   export const right: styleFn;
 
-  export interface BottomProps<ThemeType extends Theme = RequiredTheme, TVal = CSS.BottomProperty<TLengthStyledSystem>> {
+  export interface BottomProps<ThemeType extends Theme = RequiredTheme, TVal = (keyof ThemeSpaces) | "auto" | number> {
     /**
      * The bottom CSS property participates in specifying the vertical position of a
      * positioned element. It has no effect on non-positioned elements.
@@ -1440,7 +1428,7 @@ declare module "styled-system" {
 
   export const bottom: styleFn;
 
-  export interface LeftProps<ThemeType extends Theme = RequiredTheme, TVal = CSS.LeftProperty<TLengthStyledSystem>> {
+  export interface LeftProps<ThemeType extends Theme = RequiredTheme, TVal = (keyof ThemeSpaces) | "auto" | number> {
     /**
      * The left CSS property participates in specifying the horizontal position
      * of a positioned element. It has no effect on non-positioned elements.

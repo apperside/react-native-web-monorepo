@@ -1,5 +1,5 @@
 import { ThemedComponentWithVariants } from "@apperside/ui-engine/src/theme";
-import { BackgroundImageProps, BorderRadiusProps, ColorProps, FlexboxProps, FontFamilyProps, SpaceProps, TextStyleProps, ThemeFontFamilies, ThemeFontSizes, TypographyProps as SSTypographyProps, WidthProps } from "styled-system";
+import { BackgroundImageProps, BorderProps, ColorProps, FlexboxProps, FontFamilyProps, SpaceProps, TextStyleProps, ThemeFontFamilies, ThemeFontSizes, TypographyProps as SSTypographyProps, WidthProps } from "styled-system";
 import Text from "./TypographyComponent";
 
 export type TypographyVariants =
@@ -17,7 +17,7 @@ export type TypographyComponentStyleProps =
   & BackgroundImageProps
   & TextStyleProps
   & FontFamilyProps
-  & BorderRadiusProps
+  & BorderProps
   & FontFamilyProps
   & FlexboxProps
   & {

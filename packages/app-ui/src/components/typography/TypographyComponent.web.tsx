@@ -1,6 +1,6 @@
 import shouldForwardProp from "@styled-system/should-forward-prop";
 import styled from "styled-components";
-import { background, borderRadius, variant, color, fontFamily, fontSize, fontStyle, fontWeight, letterSpacing, lineHeight, size, space, textAlign, textStyle, width } from "styled-system";
+import { background, borderRadius, variant, color, fontFamily, fontSize, fontStyle, fontWeight, letterSpacing, lineHeight, size, space, textAlign, textStyle, width, border } from "styled-system";
 import { TypographyComponentStyleProps } from ".";
 
 // eslint-disable-next-line max-len
@@ -18,7 +18,7 @@ const Text = styled.div.withConfig<TypographyComponentStyleProps>({
   letterSpacing,
   fontFamily,
   fontWeight,
-  borderRadius,
+  border,
   lineHeight,
   textAlign,
   background,

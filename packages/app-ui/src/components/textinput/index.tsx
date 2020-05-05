@@ -1,6 +1,6 @@
 import { BackgroundImageProps, BorderProps, BorderRadiusProps, ColorProps, FontFamilyProps, LayoutProps, SpaceProps, TextStyleProps, TypographyProps as SSTypographyProps, WidthProps } from "styled-system";
-import { appTheme } from "../..";
 import { TextInput } from "./TextInput";
+import { textInputTheme } from "./TextInput.theme";
 
 export type TextInputVariants = "primary" | "secondary"
 
@@ -24,6 +24,9 @@ export type TextInputStyleProps =
     variant?: TextInputVariants
     value?: any
   };
-TextInput.defaultProps = { ...appTheme.textInput, variant: "primary" };
+TextInput.defaultProps = {
+  variant: "primary",
+  ...textInputTheme
+};
 
 export default TextInput;

@@ -1,6 +1,7 @@
 import * as CSS from "csstype";
 import { DefaultTheme } from "styled-components";
 import { ObjectOrArray, Theme as StyledSystemTheme, ThemeBorders, ThemeBorderStyles, ThemeBreakpoints, ThemeColors, ThemeFontFamilies, ThemeFontSizes, ThemeSizes, ThemeSpaces } from "styled-system";
+export { ThemeProvider } from "./ThemeProvider";
 
 export type VariantsProps<Props, Variants extends string> =
   { [key in Variants]: Props & { [key in CSS.Pseudos]?: Props } }
@@ -62,7 +63,10 @@ export type PropsWithVariant<T> = { variant?: T }
  * https://styled-system.com/guides/array-props
  * todo: explain pros and cons of array props
  */
-export const buildObjectOrArray = <P1, P2>(valuesMap: P2, useArrayProps: boolean = false) => {
+export const buildObjectOrArray = <P1, P2>(
+  valuesMap: P2,
+  useArrayProps: boolean = false
+) => {
   // @ts-ignore
   const result: ObjectOrArray<P1, keyof P2> = [];
   Object.keys(valuesMap).forEach((valueKey) => {

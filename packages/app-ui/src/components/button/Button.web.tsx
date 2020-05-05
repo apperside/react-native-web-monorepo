@@ -1,13 +1,16 @@
-import React from "react";
+import shouldForwardProp from "@styled-system/should-forward-prop";
 import styled from "styled-components";
 import { border, color, flexbox, layout, size, space, variant } from "styled-system";
 import { ButtonStyleProps } from ".";
-import shouldForwardProp from "@styled-system/should-forward-prop";
+import { buttonTheme, ButtonVariants } from "./Button.theme";
+import { WithVariant } from "../..";
 
-const Button = styled.button.withConfig<ButtonStyleProps>({
+type Props = WithVariant<ButtonStyleProps, ButtonVariants> & { onClick: (e: any) => void }
+
+const Button = styled.button.withConfig<Props>({
   // avoid forwarding styled-system's props to dom
   shouldForwardProp
-})<ButtonStyleProps>(
+})<Props>(
   space,
   size,
   layout,

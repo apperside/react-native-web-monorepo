@@ -1,7 +1,7 @@
 import React from "react";
-import { DefaultTheme } from "styled-components";
+import { DefaultTheme, CustomComponentsTheme } from "styled-components";
 import { ThemeBorders, ThemeBorderWidths, ThemeBreakpoints, ThemeColors, ThemeFontFamilies, ThemeFontSizes, ThemeSizes, ThemeSpaces } from "styled-system";
-import { buildBreakpoints } from "../styleguide/breakpoints";
+import { buildBreakpoints } from "../responsiveUtils";
 import { SCThemeProvider } from "./ThemeProvider";
 import { buildObjectOrArray } from "..";
 
@@ -21,7 +21,7 @@ export type ThemeSpecs = {
   fontSizes?: ThemeFontSizes
 }
 
-export const buildBaseTheme = (specs: ThemeSpecs): DefaultTheme => {
+const buildBaseTheme = (specs: ThemeSpecs): DefaultTheme => {
   const defaultTheme: DefaultTheme = {
     space: buildObjectOrArray(specs.spaces),
     breakpoints: buildBreakpoints(specs.breakpoints),
@@ -37,20 +37,22 @@ export const buildBaseTheme = (specs: ThemeSpecs): DefaultTheme => {
 };
 
 export type ThemeProviderProps = {
-  theme?: DefaultTheme,
-  themeSpecs?: ThemeSpecs
+  baseTheme: ThemeSpecs
+  componentsTheme: CustomComponentsTheme
 }
 
-export const ThemeProvider: React.FC<ThemeProviderProps> = ({ theme, themeSpecs, children }) => {
-  let finalTheme = theme;
+export const ThemeProvider: React.FC<ThemeProviderProps> = ({
+  baseTheme,
+  componentsTheme,
+  children
+}) => {
+  const theme = buildBaseTheme(baseTheme);
+  const appTheme: DefaultTheme = {
+    ...theme,
+    ...componentsTheme
+  };
 
-  if (!finalTheme && themeSpecs) {
-    finalTheme = buildBaseTheme(themeSpecs);
-  }
-  if (finalTheme) {
-    return <SCThemeProvider theme={finalTheme}>
-      {children}
-    </SCThemeProvider>;
-  }
-  return null;
+  return <SCThemeProvider theme={appTheme}>
+    {children}
+  </SCThemeProvider>;
 };

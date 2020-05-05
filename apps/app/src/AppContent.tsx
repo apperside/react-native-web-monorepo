@@ -5,7 +5,7 @@ import Text from "@apperside/app-ui/src/components/typography";
 import { AppDispatch } from "@apperside/commons/src/redux";
 import { loginAction } from "@apperside/commons/src/redux/loading";
 import { isLoadingSelector } from "@apperside/commons/src/redux/loading/selectors";
-import { VFlexBox } from "@apperside/ui-engine/src/layout";
+import { VFlexBox } from "@apperside/ui-engine/src/";
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 

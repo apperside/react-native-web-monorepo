@@ -44,8 +44,8 @@ def flipper_post_install(installer)
   end
 end
 
-target 'TaxiApp' do
-  # Pods for TaxiApp
+target 'MyApp' do
+  # Pods for MyApp
   pod 'FBLazyVector', :path => "../node_modules/react-native/Libraries/FBLazyVector"
   pod 'FBReactNativeSpec', :path => "../node_modules/react-native/Libraries/FBReactNativeSpec"
   pod 'RCTRequired', :path => "../node_modules/react-native/Libraries/RCTRequired"
@@ -77,7 +77,7 @@ target 'TaxiApp' do
   pod 'glog', :podspec => '../node_modules/react-native/third-party-podspecs/glog.podspec'
   pod 'Folly', :podspec => '../node_modules/react-native/third-party-podspecs/Folly.podspec'
 
-  target 'TaxiAppTests' do
+  target 'MyAppTests' do
     inherit! :complete
     # Pods for testing
   end
@@ -94,10 +94,10 @@ target 'TaxiApp' do
   end
 end
 
-target 'TaxiApp-tvOS' do
-  # Pods for TaxiApp-tvOS
+target 'MyApp-tvOS' do
+  # Pods for MyApp-tvOS
 
-  target 'TaxiApp-tvOSTests' do
+  target 'MyApp-tvOSTests' do
     inherit! :search_paths
     # Pods for testing
   end

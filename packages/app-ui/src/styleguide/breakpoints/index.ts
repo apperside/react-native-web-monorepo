@@ -1,8 +1,6 @@
 
 import { ThemeBreakpoints } from "styled-system";
-
 declare module "styled-system" {
-
   export interface ThemeBreakpoints {
     // default is needed by styled-system in order to work
     default: number | string,
@@ -17,7 +15,8 @@ declare module "styled-system" {
 }
 
 /**
- * The logic is mobile first, so the first breakpoint is alway from 0 to the first declared one
+ * The logic is mobile first, so the first breakpoint
+ * is alway from 0 to the first declared one
  */
 export const breakpointsMap: ThemeBreakpoints = {
   default: "0px",

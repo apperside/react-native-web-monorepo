@@ -15,6 +15,7 @@ declare module "styled-system" {
     DESKTOP_LARGE_MAIN_PADDING: number | string;
     TABLET_MAIN_PADDING: number | string;
     MOBILE_MAIN_PADDING: number | string;
+    MY_MARGIN: number | string;
   }
 
 }
@@ -31,5 +32,6 @@ export const spacesMap: ThemeSpaces = {
   DESKTOP_LOW_PADDING: "118px",
   DESKTOP_LARGE_MAIN_PADDING: "170px",
   TABLET_MAIN_PADDING: "110px",
-  MOBILE_MAIN_PADDING: 25
+  MOBILE_MAIN_PADDING: 25,
+  MY_MARGIN: "10%"
 };
