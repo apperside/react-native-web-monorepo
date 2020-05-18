@@ -1,5 +1,5 @@
 import { App as BaseApp } from "@apperside/ui-engine/src/App";
-import { ThemeSpecs } from "@apperside/ui-engine/src/theme/ThemeProvider";
+import { BaseTheme } from "@apperside/ui-engine/src/theme/ThemeProvider";
 import { Col, Grid, Row } from "@apperside/ui-engine/src";
 import { ThemedComponentWithVariants } from "@apperside/ui-engine/src/theme";
 import React from "react";
@@ -26,7 +26,7 @@ declare module "styled-components" {
   }
 }
 
-const themeSpecs: ThemeSpecs = {
+const themeSpecs: BaseTheme = {
   borderWidths: themeBorderWidthsMap,
   borders: themeBordersMap,
   breakpoints: breakpointsMap,

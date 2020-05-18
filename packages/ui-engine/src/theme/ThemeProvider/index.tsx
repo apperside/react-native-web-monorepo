@@ -10,7 +10,7 @@ import { buildObjectOrArray } from "..";
  * It must be feeded to buildTheme function to get a theme
  * object which works with styled-system
  */
-export type ThemeSpecs = {
+export type BaseTheme = {
   borderWidths?: ThemeBorderWidths,
   borders?: ThemeBorders
   breakpoints?: ThemeBreakpoints
@@ -21,7 +21,7 @@ export type ThemeSpecs = {
   fontSizes?: ThemeFontSizes
 }
 
-const buildBaseTheme = (specs: ThemeSpecs): DefaultTheme => {
+const buildBaseTheme = (specs: BaseTheme): DefaultTheme => {
   const defaultTheme: DefaultTheme = {
     space: buildObjectOrArray(specs.spaces),
     breakpoints: buildBreakpoints(specs.breakpoints),
@@ -37,7 +37,7 @@ const buildBaseTheme = (specs: ThemeSpecs): DefaultTheme => {
 };
 
 export type ThemeProviderProps = {
-  baseTheme: ThemeSpecs
+  baseTheme: BaseTheme
   componentsTheme: CustomComponentsTheme
 }
 
