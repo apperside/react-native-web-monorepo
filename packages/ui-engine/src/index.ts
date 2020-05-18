@@ -1,2 +1,2 @@
 export * from "./components";
-export { App } from "./App";
+export { ThemeProvider } from "./theme";

@@ -5,7 +5,7 @@ import Text from "./typography";
 import { AppDispatch } from "@apperside/commons/src/redux";
 import { isLoadingSelector } from "@apperside/commons/src/redux/loading/selectors";
 import { VFlexBox } from "@apperside/ui-engine/src";
-import React from "react";
+import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { loginAction } from "@apperside/commons/src/redux/loading";
 
@@ -29,7 +29,7 @@ const ExamplePage: React.FC<{}> = props => {
       fontSize="screenTitle">Welcome</Text>
     <MyBox width={1}
       border="1px solid red">
-      <Text>This is a div on the web a d a View on RN</Text>
+      <Text>This is a div on the web and a View on RN</Text>
     </MyBox>
     <TextInput onChange={(e) => console.warn("change")}
       placeholder="Insert code"
@@ -38,6 +38,7 @@ const ExamplePage: React.FC<{}> = props => {
       <Text>CARICAMENTO</Text>
     }
     <Button pt={10}
+      variant="secondary"
       onClick={onClick} >CLICK ME</Button>
   </VFlexBox>;
 };

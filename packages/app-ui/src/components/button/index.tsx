@@ -1,7 +1,7 @@
 import { BorderProps, ColorProps, FlexboxProps, LayoutProps, SizeProps, SpaceProps } from "styled-system";
-import { TypographyComponentStyleProps, TypographyVariants } from "../typography";
+import { TypographyComponentStyleProps } from "../typography";
 import Button from "./Button";
-import { ButtonVariants, buttonTheme } from "./Button.theme";
+import { buttonTheme } from "./Button.theme";
 
 export type ButtonStyleProps =
   & SpaceProps

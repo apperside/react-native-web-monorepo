@@ -1,6 +1,6 @@
 
 import { BreakpointNames, ThemeBreakpoints, ObjectOrArray } from "styled-system";
-import { buildObjectOrArray } from ".";
+import { buildObjectOrArray } from "./ThemeProvider";
 
 /**
  * The logic is mobile first, so the first breakpoint is alway from 0 to the first declared one

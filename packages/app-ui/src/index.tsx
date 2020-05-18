@@ -1,9 +1,8 @@
-import { App as BaseApp } from "@apperside/ui-engine/src/App";
-import { BaseTheme } from "@apperside/ui-engine/src/theme/ThemeProvider";
 import { Col, Grid, Row } from "@apperside/ui-engine/src";
-import { ThemedComponentWithVariants } from "@apperside/ui-engine/src/theme";
+import { ThemedComponentWithVariants, ThemeProvider } from "@apperside/ui-engine/src/theme";
+import { BaseTheme } from "@apperside/ui-engine/src/theme/ThemeProvider";
 import React from "react";
-import { CustomComponentsTheme, DefaultTheme } from "styled-components";
+import { CustomComponentsTheme } from "styled-components";
 import { ButtonStyleProps } from "./components/button";
 import { buttonTheme, ButtonVariants } from "./components/button/Button.theme";
 import { TextInputStyleProps, TextInputVariants } from "./components/textinput";
@@ -15,7 +14,7 @@ import { breakpointsMap } from "./styleguide/breakpoints";
 import { themeColors } from "./styleguide/colors";
 import { sizesMap } from "./styleguide/sizes";
 import { spacesMap } from "./styleguide/spaces";
-
+import { App as BaseApp } from "./app";
 export { Col, Grid, Row };
 
 declare module "styled-components" {
@@ -26,7 +25,7 @@ declare module "styled-components" {
   }
 }
 
-const themeSpecs: BaseTheme = {
+const baseTheme: BaseTheme = {
   borderWidths: themeBorderWidthsMap,
   borders: themeBordersMap,
   breakpoints: breakpointsMap,
@@ -44,12 +43,10 @@ const componentsTheme: CustomComponentsTheme = {
 };
 
 export type WithVariant<P, V> = P & { variant?: V }
-// export const appTheme: DefaultTheme = {
-//   ...buildBaseTheme(themeSpecs),
-//   ...getComponentsTheme()
-// };
 
 export const App: React.FC = props => {
-  return <BaseApp theme={themeSpecs}
-    componentsTheme={componentsTheme} >{props.children}</BaseApp>;
+  return <BaseApp baseTheme={baseTheme}
+    componentsTheme={componentsTheme} >
+    {props.children}
+  </BaseApp>;
 };

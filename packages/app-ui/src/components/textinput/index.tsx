@@ -2,6 +2,9 @@ import { BackgroundImageProps, BorderProps, BorderRadiusProps, ColorProps, FontF
 import { TextInput } from "./TextInput";
 import { textInputTheme } from "./TextInput.theme";
 
+/**
+ * TODO: add cross platform textChanged event
+ */
 export type TextInputVariants = "primary" | "secondary"
 
 export type TextInputStyleProps =
